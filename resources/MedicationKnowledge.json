@@ -1,0 +1,223 @@
+{
+    "resourceType": "MedicationKnowledge",
+    "identifier": [{
+        "value": "1-19251"
+    }],
+    "status": "active",
+    "indicationGuideline": [{
+        "indication": [
+        {
+            "concept": {
+                "text": "krampfartige Schmerzen im Magen-Darm-Trakt"
+            }
+        },
+        {
+            "concept": {
+                "text": "krampfartige Schmerzen der Gallen- und Harnwege"
+            }
+        },
+        {
+            "concept": {
+                "text": "krampfartige Schmerzen der weiblichen Geschlechtsorgane"
+            }
+        },
+        {
+            "concept": {
+                "text": "krampfartige Schmerzen während der Monatsblutung"
+            }
+        }],
+        "dosingGuideline": [
+        {
+            "dosage": [{
+                "type": {
+                    "text": "Wenn Sie die Einnahme von Buscopan plus Paracetamol vergessen haben"
+                },
+                "dosage": [{
+                    "patientInstruction":"Setzen Sie die Einnahme zum nächsten Zeitpunkt fort. Nehmen Sie nicht die doppelte Menge ein, wenn Sie die vorherige Einnahme vergessen haben."
+                }]
+            }]
+        },
+        {
+            "dosage": [{
+                "type": {
+                    "text": "Wenn Sie die Einnahme von Buscopan plus Paracetamol abbrechen"
+                    
+                },
+                "dosage": [{
+                    "patientInstruction": "Buscopan plus Paracetamol Filmtabletten werden nur bei Bedarf eingenommen und sollen nach Abklingen der Beschwerden abgesetzt werden."
+                    
+                }]
+            }]
+        },
+        {
+            "dosage": [{
+                "type": {
+                    "text": "Wenn Sie eine größere Menge von Buscopan plus Paracetamol eingenommen haben, als Sie sollten"
+                   
+                },
+                "dosage": [{
+                    "patientInstruction": "Wenn Sie mehr als die vorgeschriebene Dosis (zu viele Filmtabletten) eingenommen haben oder ein Kind Filmtabletten geschluckt hat, verständigen Sie bitte unverzüglich einen Arzt, auch wenn noch keine Beschwerden bestehen! Halten Sie eine Packung des Arzneimittels bereit, damit sich der Arzt über die aufgenommenen Wirkstoffe informieren kann. Er wird über notwendige Maßnahmen entscheiden.\n Anzeichen einer Vergiftung mit Paracetamol In der Regel treten Beschwerden innerhalb von 24 Stunden auf: Übelkeit, Erbrechen, Appetitlosigkeit, Blässe und Unterleibsschmerzen. Danach kann es zu einer Besserung des Befindens kommen, es bleiben jedoch leichte Leibschmerzen als Hinweis auf eine Leberschädigung. Eine Überdosierung mit Paracetamol kann bleibende Leberschäden verursachen, die in weiterer Folge zu Leberversagen, Blutungen im Magen-Darm-Trakt, Blutübersäuerung und Enzephalopathie (nicht entzündliche Erkrankungen des Gehirns), stark erhöhter Blutungsneigung, Koma und Tod führen können. Klinische Beschwerden der Leberschäden werden in der Regel nach 2 Tagen sichtbar und erreichen nach 4 bis 6 Tagen ein Maximum. Überdosierung kann auch zu Bauchspeicheldrüsenentzündung, akutem Nierenversagen, Störungen der Herzfunktion und Panzytopenie (stark verringerte Zahl aller Blutzellen verbunden mit Schwäche, erhöhter Anfälligkeit für Infektionen und vermehrten Blutergüssen) führen. Bei älteren Personen und Kleinkindern sowie Patienten mit eingeschränkter Leberfunktion, chronischem Alkoholkonsum oder chronischer Mangelernährung und bei Patienten, die gleichzeitig mit den Leberstoffwechsel anregenden Arzneimitteln behandelt werden, besteht ein erhöhtes Risiko einer Paracetamolvergiftung mit möglicherweise tödlichem Ausgang.\n Anzeichen einer Vergiftung mit Hyoscin-N-butylbromid Es kann zu Harnverhaltung, Mundtrockenheit, beschleunigtem Herzschlag, Hemmung der Darmbeweglichkeit, Benommenheit und vorübergehenden Sehstörungen (Störung der Anpassungsfähigkeit der Augen an unterschiedliche Entfernungen, Glaukomanfälle [Auslösung von grünem Star]) kommen."
+                }]
+            }]
+        },
+        {
+            "dosage": [{
+                "type": {
+                    "text": "Erwachsene und Jugendliche ab 12 Jahren"
+                },
+                "dosage": [{
+                    "patientInstruction":  "Nehmen Sie dieses Arzneimittel immer genau wie in dieser Packungsbeilage beschrieben bzw. genau  nach Anweisung Ihres Arztes oder Apothekers ein. Fragen Sie bei Ihrem Arzt oder Apotheker nach, wenn Sie sich nicht sicher sind. Die empfohlene Dosis für Erwachsene und Jugendliche über 12 Jahre beträgt 3 Mal täglich 1 Filmtablette. Im Bedarfsfall kann eine Einzelgabe von 2 Filmtabletten erfolgen. Eine Tageshöchstdosis von 4 Filmtabletten darf nicht überschritten werden. Der zeitliche Abstand soll mindestens 8 Stunden bis zur nächsten Anwendung betragen. Zum Einnehmen. Die Filmtabletten sind unzerkaut mit ausreichend Flüssigkeit einzunehmen. Die Kerbe dient nicht zum Teilen der Tablette.",
+                    "additionalInstruction":[
+                        {
+                            "coding": [{
+                                "system": "http://snomed.info/sct",
+                                "code": "418693002",
+                                "display": "Swallowed whole, not chewed"
+                            }],
+                            "text": "unzerkaut"
+                        },
+                        {
+                            "coding": [{
+                                "system": "http://snomed.info/sct",
+                                "code": "419303009",
+                                "display": "With plenty of water"
+                            }],
+                            "text": "mit ausreichend Flüssigkeit"
+                        }],
+                    "timing": {
+                        "repeat": {
+                            "frequency": 3,
+                            "period": 1,
+                            "periodUnit": "d",
+                            "boundsRange": {
+                                "high": {
+                                    "value" : 3
+                                }
+                            }
+                        }
+                    },
+                    "route": {
+                        "coding": [{
+                            "system": "http://snomed.info/sct",
+                            "code": "26643006",
+                            "display": "Per os"
+                        }],
+                        "text": "Zum Einnehmen"
+                    },
+                    "doseAndRate": [{
+                        "type": {
+                            "text": "Standarddosis"
+                        },
+                        "doseQuantity": {
+                                "value": 1,
+                                "unit": "Filmtablette",
+                                "system" : "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+                                "code" : "TAB"
+                        }
+                    },
+                    {
+                        "type": {
+                            "text": "Maximale Dosierung"
+                        },
+                        "doseQuantity": {
+                            "value": 2,
+                            "unit": "Filmtablette",
+                            "system" : "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+                            "code" : "TAB"
+                        }
+                    }],
+                    "maxDosePerAdministration": {
+                        "value": 2,
+                        "unit": "Filmtablette",
+                        "system" : "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+                        "code" : "TAB"
+                    },
+                    "maxDosePerPeriod": [{
+                        "numerator": {
+                            "value": 4,
+                            "unit": "Filmtablette",
+                            "system" : "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+                            "code" : "TAB"
+                        },
+                        "denominator": {
+                            "value": 1,
+                            "unit": "Tag",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "d"
+                        }
+                    }]
+                }]
+            }]
+        }]
+    }],
+    "storageGuideline": [{
+        "note": [{
+            "text": "Nicht über 30 °C lagern. Bewahren Sie dieses Arzneimittel für Kinder unzugänglich auf. Sie dürfen dieses Arzneimittel nach dem auf dem Umkarton angegebenen Verfalldatum nicht mehr verwenden. Das Verfalldatum bezieht sich auf den letzten Tag des angegebenen Monats."
+        }],
+        "environmentalSetting": [{
+            "type": {
+                "coding": [
+                  {
+                    "system": "http://unitsofmeasure.org",
+                    "code": "Cel",
+                    "display": "Cel"
+                  }
+                ]
+              },
+              "valueRange": {
+                "high": {
+                    "value": 30
+                }
+              }
+        }]
+
+    }],    
+    "definitional": {
+        "definition": {
+            "reference": "MedicinalProductDefinition/1-19251"
+        }, 
+        "doseForm": {
+            "coding": [{
+                "system": "http://snomed.info/sct",
+                "code": "1163573008",
+                "display": "Conventional release film-coated oral tablet"	
+            }],
+            "text": "Filmtabletten"
+        },
+        "drugCharacteristic": [{
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic",
+                  "code": "color",
+                  "display": "Color"
+                }
+              ]
+            },
+            "valueString": "Weiß"
+        },
+        {
+            "type": {
+                "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic",
+                    "code": "shape",
+                    "display": "Shape"
+                }]
+            },
+            "valueString": "längliche, beiderseits nach außen gewölbte Filmtabletten mit einer Kerbe auf einer Seite"
+        },
+        {
+            "type": {
+                "coding": [
+                    {
+                    "system": "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic",
+                    "code": "imprintcd",
+                    "display": "Imprint Code"
+                    }
+                ]
+                },
+            "valueString": "Beiderseits der Kerbe ist der Code „05B“ eingeprägt"
+        }]
+    }
+  }
