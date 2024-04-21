@@ -1,0 +1,25 @@
+{
+    "resourceType" : "ClinicalUseDefinition",
+    "identifier": [{
+        "value": "NameSideEffect"
+    }],
+    "text" : {
+      "status" : "generated",
+      "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      \n      <p>SideEffect</p>\n    \n    </div>"
+    },
+    "type" : "undesirable-effect",
+    "undesirableEffect" : {
+      "symptomConditionEffect": {
+        "concept": {
+            "text": "Description of Side Effect"
+        }
+      },
+      "frequencyOfOccurrence": {
+        "coding": [{
+            "system" : "http://hl7.org/fhir/undesirable-effect-frequency",
+            "code" : "Common",
+            "display" : "Common"
+        }]
+      }
+    }
+  }
