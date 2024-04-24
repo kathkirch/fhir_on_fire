@@ -5,8 +5,16 @@ description = ""
 authors = ["kathi"]
 readme = "README.md"
 
+packages = [
+    { include = "services"}
+]
+
 [tool.poetry.dependencies]
 python = "^3.10"
+google-cloud-secret-manager = "^2.20.0"
+jupyterlab = "^4.1.6"
+openai = "^1.23.2"
+google-api-python-client = "^2.127.0"
 
 
 [build-system]
