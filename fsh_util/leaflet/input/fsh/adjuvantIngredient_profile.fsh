@@ -5,7 +5,7 @@ Title: "Adjuvant Ingredient"
 Description: "Custom profile for an adjuvant Ingredient focusing on specific use to describe medication leaflet of medicinal product"
 
 * identifier 1..1
-* identifier.value = "Name of the ingredient"
+* identifier.value ^short = "Name of the ingredient"
 
 * for 1..1
 * for only Reference(MedicinalProductDefinition)

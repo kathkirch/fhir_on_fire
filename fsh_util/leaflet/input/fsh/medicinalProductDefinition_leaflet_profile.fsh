@@ -40,10 +40,18 @@ Description: "Profile used to create IG to display leaflet information"
 * indication 1..1
 * indication ^short = "The indication described in leaflet" 
 
-* ingredient ^slicing.discriminator.type = #pattern
-* ingredient ^slicing.discriminator.path = "role"
-* ingredient ^slicing.rules = #open
-* ingredient contains ActiveIngredient 1..* and AdjuvantIngredient 0..*
+* contained ^short = "Contained resources to ingredients"
+
+* contained ^slicing.discriminator.type = #profile
+* contained ^slicing.discriminator.path = "ingredient"
+* contained ^slicing.rules = #open
+
+* contained contains ActiveIngredient 1..1
+* contained contains AdjuvantIngredient 0..*
+
+
+* contained[ActiveIngredient] only active-ingredient
+* contained[AdjuvantIngredient] only adjuvant-ingredient
 
 * statusDate ^short = "Date when leaflet was created"
 * additionalMonitoringIndicator ^short =  "Info for black triangle warning if existing"
