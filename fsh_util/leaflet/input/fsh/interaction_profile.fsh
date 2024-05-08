@@ -1,7 +1,7 @@
 Profile: Interaction
 Parent: ClinicalUseDefinition
 Id: interaction
-Title: "Clinical Use Definition for Interactions"
+Title: "Interaction"
 Description: "A custom profile for Clinical Use Definition resources that describe interactions."
 
 * identifier 1..1
@@ -9,5 +9,7 @@ Description: "A custom profile for Clinical Use Definition resources that descri
 
 * type = #interaction
 
+* interaction 1..1
+* interaction.type 1..1
 * interaction.type.text ^short = "Description for the interaction"
 * interaction.type.text 1..1

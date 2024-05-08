@@ -1,8 +1,8 @@
 Profile: MedicationKnowledge_Leaflet
 Parent: MedicationKnowledge
-Id: medicalKnowledge-leaflet
-Title: "MedicalKnowledge Leaflet Profile"
-Description: "Custom MedicalKnowledge Profile used to describe infos from medication leaflet"
+Id: medicationKnowledge-leaflet
+Title: "Leaflet MediactionKnowledge"
+Description: "Custom MedicationKnowledge Profile used to describe infos from medication leaflet"
 
 * identifier 1..1
 * identifier.value ^short = "Admission number on medication package"

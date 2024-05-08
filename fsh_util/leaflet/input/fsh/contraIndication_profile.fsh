@@ -10,5 +10,8 @@ Description: "Custom Profile used in IG to display leaflet information in fhir"
 
 * type = #contraindication
 
+* contraindication 1..1
+* contraindication.diseaseSymptomProcedure 1..1
+* contraindication.diseaseSymptomProcedure only CodeableReference
 * contraindication.diseaseSymptomProcedure.concept.text ^short = "Description of Contraindication"
 * contraindication.diseaseSymptomProcedure.concept.text 1..1
