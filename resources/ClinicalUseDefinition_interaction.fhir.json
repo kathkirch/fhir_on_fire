@@ -1,0 +1,16 @@
+{
+  "resourceType" : "ClinicalUseDefinition",
+  "identifier": [{
+      "value": "NameInteraction"
+  }],
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      \n      <p>Interaction</p>\n    \n    </div>"
+  },
+  "type" : "interaction",
+  "interaction" : {
+    "type": {
+      "text": "Placeholder for interaction description"
+    }
+  }
+}

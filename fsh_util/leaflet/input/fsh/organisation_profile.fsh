@@ -1,12 +1,13 @@
 Profile: MedicinalOrganization
 Parent: Organization
 Id: medicinal-organization
-Title: "Medicianl Organization"
-Description: "A custom profile for Organization resources tailored to describe leaflet information."
+Title: "Medicinal Organization"
+Description: "A custom profile for Organization-Resources that is used to display information in the package insert for either the drug manufacturer or the marketing authorization holder"
 
 * identifier 1..1 // Assuming there can be multiple identifiers but at least one is required
 * identifier.value ^short = "Identifier for the organisation, based on short name of organisation"
-* name ^short = "Name of organisation "
+
+* name ^short = "Name of organisation, the whole name of organization is required"
 * name 1..1 
 
 * contact ^slicing.discriminator.type = #pattern
@@ -21,6 +22,7 @@ Description: "A custom profile for Organization resources tailored to describe l
 * contact[Website].telecom 0..1
 * contact[Website].telecom.system = #url
 
+* contact ^short = "The whole address must be present"
 * contact contains Address 1..1
 * contact[Address].address.text 1..1
 * contact[Address].address.line 1..1 

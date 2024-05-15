@@ -2,16 +2,17 @@ Profile: UndesirableEffect
 Parent: ClinicalUseDefinition
 Id: undesirable-effect
 Title: "Undesirable Effect"
-Description: "A custom profile for Clinical Use Definition resources tailored to describe an undesirable effects"
+Description: "A custom profile for ClinicalUseDefinition-Resources tailored to describe an undesirable effect"
 
 * identifier 1..1
-* identifier.value ^short = "Short name to for the effect to use as identifier"
+* identifier.value ^short = "Buzzword of the side effect"
 
 * type = #undesirable-effect
 
 * undesirableEffect.symptomConditionEffect only CodeableReference
 * undesirableEffect.symptomConditionEffect.concept.text 1..1
-* undesirableEffect.symptomConditionEffect.concept.text ^short = "Description of Side Effect"
+* undesirableEffect.symptomConditionEffect.concept.text ^short = "The side effect as plain text"
+
 
 * undesirableEffect.frequencyOfOccurrence 1..1 
 * undesirableEffect.frequencyOfOccurrence only CodeableConcept

@@ -3,25 +3,42 @@ Alias: ingredient-role = http://hl7.org/fhir/ingredient-role
 Profile: MPD_Profile
 Parent: MedicinalProductDefinition
 Id: mpdProfile
-Title: "Profile Leaflet Information"
-Description: "Profile used to create IG to display leaflet information"
+Title: "Leaflet MedicinalProductDefinition"
+Description: "Custom MedicinalProductDefinition profile for displaying information in the medication package leaflet, including name, name parts country and language, references to manufacturer and marketing authorization holder, ingredients and other required informations."
 
 * identifier 1..1
 * identifier.value ^short = "Use of the admission number of the medication is required for the identifier"
 
 * name.productName 1..1
-* name.productName ^short = "the complete product name, which is also presented on the package."
+* name.productName ^short = "the full product name, which is also presented on the package."
+
 * name.part ^slicing.discriminator.type = #pattern
 * name.part ^slicing.discriminator.path = "type"
 * name.part ^slicing.rules = #open
-* name.part.type from http://hl7.org/fhir/ValueSet/medicinal-product-name-part-type (required)
+
 * name.part contains doseFormPart 1..1
 * name.part contains strengthPart 1..1
 * name.part contains populationPart 0..1
+
+* name.part[doseFormPart].part 1..1
+* name.part[doseFormPart].part ^short = "doseFormPart of medication name"
+* name.part[doseFormPart].type from http://hl7.org/fhir/ValueSet/medicinal-product-name-part-type (required)
+* name.part[doseFormPart].type.coding.code  1..1
 * name.part[doseFormPart].type.coding.code = #DoseFormPart
+
+* name.part[strengthPart].part 1..1
+* name.part[strengthPart].part ^short = "strength part of medication name"
+* name.part[strengthPart].type from http://hl7.org/fhir/ValueSet/medicinal-product-name-part-type (required)
+* name.part[strengthPart].type.coding.code  1..1
 * name.part[strengthPart].type.coding.code = #StrengthPart
+
+* name.part[populationPart].part 1..1
+* name.part[populationPart].part ^short = "population part of medication name"
+* name.part[populationPart].type from http://hl7.org/fhir/ValueSet/medicinal-product-name-part-type (required)
+* name.part[populationPart].type.coding.code 1..1
 * name.part[populationPart].type.coding.code = #PopulationPart
 
+* name.usage.country ^short = "The country in which the medicine was marketed under this name"
 * name.usage.country = urn:iso:std:iso:3166#AT "Austria"
 * name.usage.jurisdiction = urn:iso:std:iso:3166#AT
 * name.usage.language = urn:ietf:bcp:47#de
@@ -53,6 +70,7 @@ Description: "Profile used to create IG to display leaflet information"
 * contained[ActiveIngredient] only active-ingredient
 * contained[AdjuvantIngredient] only adjuvant-ingredient
 
+* statusDate 1..1
 * statusDate ^short = "Date when leaflet was created"
 * additionalMonitoringIndicator ^short =  "Info for black triangle warning if existing"
 

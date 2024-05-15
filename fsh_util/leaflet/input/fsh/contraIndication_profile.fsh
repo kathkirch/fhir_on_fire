@@ -1,6 +1,6 @@
 Profile: Contraindication
 Parent: ClinicalUseDefinition
-Id: Contraindication
+Id: contraindication
 Title: "Contraindication"
 Description: "Custom Profile used in IG to display leaflet information in fhir"
 

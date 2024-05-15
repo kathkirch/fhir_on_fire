@@ -24,6 +24,7 @@ Description: "Custom profile for an adjuvant Ingredient focusing on specific use
 * role.coding[activeRole].display = "adjuvant"
 * role.coding[activeRole].display 1..1
 
+* substance 1..1
 * substance.code 1..1
 * substance.code only CodeableReference
 * substance.code.concept.text 1..1 

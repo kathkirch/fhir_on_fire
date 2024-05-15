@@ -2,13 +2,15 @@ Profile: Warning
 Parent: ClinicalUseDefinition
 Id: warning
 Title: "Warning"
-Description: "A custom profile for Clinical Use Definition resources that describe a warning."
+Description: "A custom profile for the ClinicalUseDefinition-Resource that is used to display a warning regarding a medication contained in the medication leaflet"
 
-* identifier 1..1
-* identifier.value ^short = "Short name for the interaction to use as warning"
+* identifier 1..1 
+* identifier.value ^short = "warning as buzzword"
+* identifier.value 1..1 MS
+
 
 * type = #warning
 
-* warning 1..1
-* warning.description ^short = "Description for the interaction"
-* warning.description 1..1
+* warning 1..1 MS
+* warning.description ^short = "The long description, the long text of the warning"
+* warning.description 1..1 MS
