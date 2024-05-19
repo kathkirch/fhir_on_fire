@@ -4,10 +4,11 @@ Id: adjuvant-ingredient
 Title: "Adjuvant Ingredient"
 Description: "Custom profile for an adjuvant Ingredient focusing on specific use to describe medication leaflet of medicinal product"
 
-* identifier 1..1
+* identifier 1..1 MS
 * identifier.value ^short = "Name of the adjuvant ingredient"
+* identifier.value MS
 
-* for 1..1
+* for 1..1 MS
 * for only Reference(MedicinalProductDefinition)
 
 * role 1..1

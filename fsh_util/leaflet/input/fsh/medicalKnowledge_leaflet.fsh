@@ -6,8 +6,9 @@ Description: "Custom MedicationKnowledge Profile used to describe infos from med
 
 * identifier 1..1
 * identifier.value ^short = "Admission number on medication package"
+* identifier.value 1..1 MS
 
-* indicationGuideline 1..* 
+* indicationGuideline 1..* MS
 * indicationGuideline.indication 1..*
 * indicationGuideline.indication.concept.text 1..1
 * indicationGuideline.indication.concept.text ^short = "The different indications described in the leaflet for which the dosing applies"
@@ -16,11 +17,11 @@ Description: "Custom MedicationKnowledge Profile used to describe infos from med
 * indicationGuideline.dosingGuideline ^slicing.discriminator.path = "dosage.type.text"
 * indicationGuideline.dosingGuideline ^slicing.rules = #open
 
-* indicationGuideline.dosingGuideline contains forgottenIntakeDosing 1..1
-* indicationGuideline.dosingGuideline contains excessiveIntakeDosing 1..1
-* indicationGuideline.dosingGuideline contains ifDiscontinued 0..1
-* indicationGuideline.dosingGuideline contains generalDosing 1..1
-* indicationGuideline.dosingGuideline contains maxDuration 1..1
+* indicationGuideline.dosingGuideline contains forgottenIntakeDosing 1..1 MS
+* indicationGuideline.dosingGuideline contains excessiveIntakeDosing 1..1 MS
+* indicationGuideline.dosingGuideline contains ifDiscontinued 0..1 MS
+* indicationGuideline.dosingGuideline contains generalDosing 1..1 MS
+* indicationGuideline.dosingGuideline contains maxDuration 1..1 MS
 
 * indicationGuideline.dosingGuideline[forgottenIntakeDosing].dosage.type.text 1..1
 * indicationGuideline.dosingGuideline[forgottenIntakeDosing].dosage.type.text ^short = "The Header, e.g. 'Measures to be taken if the administration of one or more doses has been omitted'"
@@ -58,7 +59,7 @@ Description: "Custom MedicationKnowledge Profile used to describe infos from med
 * indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.additionalInstruction.text ^short = "Buzzword as plain text also described in coded form"
 
 * indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.route from http://hl7.org/fhir/ValueSet/route-codes (required)
-* indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.route 1..1
+* indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.route 1..1 MS
 * indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.route.text ^short = "Description of route found on leaflet and referred in code"
 
 * indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.doseAndRate.type.text 1..1
@@ -69,14 +70,14 @@ Description: "Custom MedicationKnowledge Profile used to describe infos from med
 * indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.doseAndRate.doseQuantity.system 1..1
 * indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.doseAndRate.doseQuantity.code 1..1
 
-* indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.maxDosePerAdministration 1..1
+* indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.maxDosePerAdministration 1..1 MS
 * indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.maxDosePerAdministration.system from OrderableDrugForm (required)
 * indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.maxDosePerAdministration.system 1..1
 * indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.maxDosePerAdministration.code 1..1
 * indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.maxDosePerAdministration.value 1..1
 * indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.maxDosePerAdministration.unit 1..1
 
-* indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.maxDosePerPeriod 1..1
+* indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.maxDosePerPeriod 1..1 MS
 * indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.maxDosePerPeriod.numerator 1..1
 * indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.maxDosePerPeriod.numerator.system from OrderableDrugForm (required)
 * indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.maxDosePerPeriod.numerator.system 1..1
@@ -84,14 +85,14 @@ Description: "Custom MedicationKnowledge Profile used to describe infos from med
 * indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.maxDosePerPeriod.numerator.value 1..1
 * indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.maxDosePerPeriod.numerator.unit 1..1
 
-* indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.maxDosePerPeriod.denominator 1..1
+* indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.maxDosePerPeriod.denominator 1..1 MS
 * indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.maxDosePerPeriod.denominator.system from OrderableDrugForm (required)
 * indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.maxDosePerPeriod.denominator.system 1..1
 * indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.maxDosePerPeriod.denominator.code 1..1
 * indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.maxDosePerPeriod.denominator.value 1..1
 * indicationGuideline.dosingGuideline[generalDosing].dosage.dosage.maxDosePerPeriod.denominator.unit 1..1
 
-* storageGuideline 1..*
+* storageGuideline 1..* 
 * storageGuideline.note.text 1..1
 * storageGuideline.note.text ^short = "Description of storage guideline in text"
 * storageGuideline.environmentalSetting 0..1
@@ -106,7 +107,7 @@ Description: "Custom MedicationKnowledge Profile used to describe infos from med
 * definitional.definition ^slicing.discriminator.path = "definition"
 * definitional.definition ^slicing.rules = #open
 
-* definitional.definition contains mpd 1..1
+* definitional.definition contains mpd 1..1 MS
 * definitional.definition[mpd] only Reference (MedicinalProductDefinition)
 
 * definitional.doseForm.coding from DoseForm (required)
@@ -125,10 +126,10 @@ Description: "Custom MedicationKnowledge Profile used to describe infos from med
 * clinicalUseIssue ^slicing.discriminator.path = "reference"
 * clinicalUseIssue ^slicing.rules = #open
 
-* clinicalUseIssue contains SideEffect 1..*
-* clinicalUseIssue contains Interaction 1..*
-* clinicalUseIssue contains Contraindication 1..*
-* clinicalUseIssue contains Warning 1..*
+* clinicalUseIssue contains SideEffect 1..* MS
+* clinicalUseIssue contains Interaction 1..* MS
+* clinicalUseIssue contains Contraindication 1..* MS
+* clinicalUseIssue contains Warning 1..* MS
 
 * clinicalUseIssue[SideEffect] only Reference(undesirable-effect)
 * clinicalUseIssue[Interaction] only Reference(interaction)

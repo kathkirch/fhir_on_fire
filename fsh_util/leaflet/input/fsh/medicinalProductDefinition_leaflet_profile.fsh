@@ -8,17 +8,18 @@ Description: "Custom MedicinalProductDefinition profile for displaying informati
 
 * identifier 1..1
 * identifier.value ^short = "Use of the admission number of the medication is required for the identifier"
+* identifier.value 1..1 MS
 
-* name.productName 1..1
+* name.productName 1..1 MS
 * name.productName ^short = "the full product name, which is also presented on the package."
 
 * name.part ^slicing.discriminator.type = #pattern
 * name.part ^slicing.discriminator.path = "type"
 * name.part ^slicing.rules = #open
 
-* name.part contains doseFormPart 1..1
-* name.part contains strengthPart 1..1
-* name.part contains populationPart 0..1
+* name.part contains doseFormPart 1..1 MS
+* name.part contains strengthPart 1..1 MS 
+* name.part contains populationPart 0..1 MS
 
 * name.part[doseFormPart].part 1..1
 * name.part[doseFormPart].part ^short = "doseFormPart of medication name"
@@ -46,15 +47,15 @@ Description: "Custom MedicinalProductDefinition profile for displaying informati
 * contact ^slicing.discriminator.type = #pattern
 * contact ^slicing.discriminator.path = "type"
 * contact ^slicing.rules = #open
-* contact contains manufacturer 1..1
-* contact contains authorizationHolder 1..1
+* contact contains manufacturer 1..1 MS
+* contact contains authorizationHolder 1..1 MS
 * contact[manufacturer].contact only Reference(Organization)
 * contact[authorizationHolder].contact only Reference(Organization)
 
-* description 1..1 
+* description 1..1 MS
 * description ^short = "The mode of action described in leaflet" 
 
-* indication 1..1
+* indication 1..1 MS
 * indication ^short = "The indication described in leaflet" 
 
 * contained ^short = "Contained resources to ingredients"
@@ -63,14 +64,14 @@ Description: "Custom MedicinalProductDefinition profile for displaying informati
 * contained ^slicing.discriminator.path = "ingredient"
 * contained ^slicing.rules = #open
 
-* contained contains ActiveIngredient 1..1
-* contained contains AdjuvantIngredient 0..*
+* contained contains ActiveIngredient 1..1 MS
+* contained contains AdjuvantIngredient 0..* 
 
 
 * contained[ActiveIngredient] only active-ingredient
 * contained[AdjuvantIngredient] only adjuvant-ingredient
 
-* statusDate 1..1
+* statusDate 1..1 MS
 * statusDate ^short = "Date when leaflet was created"
 * additionalMonitoringIndicator ^short =  "Info for black triangle warning if existing"
 

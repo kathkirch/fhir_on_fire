@@ -17,6 +17,7 @@ openai = "^1.23.2"
 google-api-python-client = "^2.127.0"
 fhir-resources = "^7.1.0"
 fsh-validator = "^0.3.5"
+fhirpy = "^1.4.2"
 
 
 [build-system]
