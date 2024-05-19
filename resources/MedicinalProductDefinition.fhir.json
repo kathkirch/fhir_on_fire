@@ -65,7 +65,7 @@
                     "code" : "de"
                 }]
             }   
-      }]
+        }]
     }],
     "contact" : [{
         "contact": {
@@ -87,6 +87,9 @@
     "indication" : "Buscopan plus Paracetamol Filmtabletten werden angewendet bei krampfartigen Schmerzen im Bereich des Magen-Darm-Traktes, der Gallen- und Harnwege und der weiblichen Geschlechtsorgane während der Monatsblutung",
     "contained" : [{
         "resourceType" : "Ingredient",
+        "meta": {
+            "profile": "http://localhost.org/StructureDefinition/active-ingredient"
+        },
         "id" : "Hyoscin-N-butylbromid",
         "status" : "active",
         "for" : [{
