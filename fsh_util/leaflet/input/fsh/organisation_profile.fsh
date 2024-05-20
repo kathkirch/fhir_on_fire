@@ -11,23 +11,27 @@ Description: "A custom profile for Organization-Resources that is used to displa
 * name ^short = "Name of organisation, the whole name of organization is required"
 * name 1..1 MS
 
-* contact ^slicing.discriminator.type = #pattern
-* contact ^slicing.discriminator.path = "telecom.system"
-* contact ^slicing.rules = #open
+// * ^slicing.discriminator.type = #pattern
+// * ^slicing.discriminator.path = "contact"
+// * ^slicing.rules = #open
 
-* contact contains Fax 0..1 
-* contact[Fax].telecom 0..1
-* contact[Fax].telecom.system = #fax
+* contact.telecom ^slicing.discriminator.type = #pattern
+* contact.telecom ^slicing.discriminator.path = "system"
+* contact.telecom ^slicing.rules = #open
 
-* contact contains Website 0..1
-* contact[Website].telecom 0..1
-* contact[Website].telecom.system = #url
+* contact.telecom contains fax 0..1 
+* contact.telecom[fax].value 0..1
+* contact.telecom[fax].system = #fax
 
-* contact ^short = "The whole address must be present"
-* contact contains Address 1..1 MS
-* contact[Address].address.text 1..1
-* contact[Address].address.line 1..1 
-* contact[Address].address.city 1..1 
-* contact[Address].address.postalCode 1..1 
-* contact[Address].address.country 1..1 
+* contact.telecom contains website 0..1
+* contact.telecom[website].value 0..1
+* contact.telecom[website].system = #url
+
+* contact ^short = "The address of organization"
+* contact.address 1..1 MS 
+* contact.address.text 1..1
+* contact.address.line 0..1 
+* contact.address.city 1..1 
+* contact.address.postalCode 1..1 
+* contact.address.country 1..1 
 

@@ -7,7 +7,7 @@ class FHIRClient:
 
     def validate_resource(self, resource_type, resource_data):
         resource = self.client.resource(resource_type, **resource_data)
-        return resource.perform(operation='$validate')
+        return resource.is_valid(raise_exception=True)
 
     def save_resource(self, resource_type, resource_data):
         resource = self.client.resource(resource_type, **resource_data)

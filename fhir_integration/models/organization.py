@@ -1,32 +1,60 @@
 from fhir.resources.organization import Organization
 from fhir.resources.contactpoint import ContactPoint
+from fhir.resources.address import Address
 
 def map_to_organization(extracted_organization_info):
     organization = Organization(
         resourceType = "Organization",
-        meta = {"profile": "http://localhost.org/StructureDefinition/medicinal-organization"}
-            identifier = [{
-                "value": extracted_organization_info.get("shortnameAsID")
-            }],
-            name = extracted_organization_info.get("orgName"),
-            contact = [{
-                "address": {
-                    "text": extracted_organization_info.get("address_street_number"),
-                    "line": [extracted_organization_info.get("address_street_number")],
-                    "city": extracted_organization_info.get("address_city"),
-                    "postalCode": extracted_organization_info.get("address_zip"),
-                    "country": extracted_organization_info.get("address_country")
-                }
-            }]
-    )
+        meta = {"profile": ["http://localhost.org/StructureDefinition/medicinal-organization"]},
+        identifier = [{
+            "value": extracted_organization_info.get("shortNameAsID")
+        }],
+        name = extracted_organization_info.get("orgName"),
 
-    if "fax" in extracted_organization_info: 
-        if not organization.contact.telecom:
-            organization.contact.telecom = []
-        organization.contact.telecom.append(ContactPoint(system="fax", value=extracted_organization_info.get("fax")))
-    if "webAdress" in extracted_organization_info: 
-        if not organization.contact.telecom :
-            organization.contact.telecom = []
-        organization.contact.telecom.append(ContactPoint(system="url", value=extracted_organization_info.get("webAddress")))
+        
+    )
+    street_number = extracted_organization_info.get('address_street_number')
+    if street_number:
+       organization.contact = [{
+            "address": {
+                "text": 
+                    (
+                        f'{street_number}, '
+                        f'{extracted_organization_info.get("address_zip")} '
+                        f'{extracted_organization_info.get("address_city")}, '
+                        f'{extracted_organization_info.get("address_country")}'
+                    ),
+                "line": [street_number],
+                "city": extracted_organization_info.get("address_city"),
+                "postalCode": extracted_organization_info.get("address_zip"),
+                "country": extracted_organization_info.get("address_country")
+            }
+        }]
+    else:
+        organization.contact = [{
+            "address": {
+                "text": 
+                    (
+                        f'{extracted_organization_info.get("address_zip")} '
+                        f'{extracted_organization_info.get("address_city")}, '
+                        f'{extracted_organization_info.get("address_country")}'
+                    ),
+                "city": extracted_organization_info.get("address_city"),
+                "postalCode": extracted_organization_info.get("address_zip"),
+                "country": extracted_organization_info.get("address_country")
+            }
+        }] 
+
+    fax = extracted_organization_info.get('fax')
+    url = extracted_organization_info.get('webAdress')
+    
+    if fax: 
+        if not organization.contact[0].telecom:
+            organization.contact[0].telecom = []
+        organization.contact[0].telecom.append(ContactPoint(system="fax", value=fax))
+    if url: 
+        if not organization.contact[0].telecom:
+            organization.contact[0].telecom = []
+        organization.contact[0].telecom.append(ContactPoint(system="url", value=url))
 
     return organization

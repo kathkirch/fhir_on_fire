@@ -18,6 +18,9 @@ google-api-python-client = "^2.127.0"
 fhir-resources = "^7.1.0"
 fsh-validator = "^0.3.5"
 fhirpy = "^1.4.2"
+transformers = "^4.41.0"
+tensorflow = "^2.16.1"
+tf-keras = "^2.16.0"
 
 
 [build-system]
