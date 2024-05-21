@@ -35,3 +35,9 @@ Id: drug-characteristic
 Title: "Drug characteristic ValueSet"
 Description: "A value set to define drug characteristic"
 * include codes from system http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic
+
+ValueSet: BlackTriangleMonitoring
+Id: black-triangle
+Title: "Black Triangle ValueSet"
+Description: "Code System for black triangle monitoring information"
+* include codes from system http://hl7.org/fhir/medicinal-product-additional-monitoring

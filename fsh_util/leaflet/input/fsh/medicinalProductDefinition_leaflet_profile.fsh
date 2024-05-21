@@ -73,5 +73,13 @@ Description: "Custom MedicinalProductDefinition profile for displaying informati
 
 * statusDate 1..1 MS
 * statusDate ^short = "Date when leaflet was created"
-* additionalMonitoringIndicator ^short =  "Info for black triangle warning if existing"
+
+* additionalMonitoringIndicator 0..1
+* additionalMonitoringIndicator ^short = "Info for black triangle monitoring if existing in leaflet"
+* additionalMonitoringIndicator only CodeableConcept 
+* additionalMonitoringIndicator from BlackTriangleMonitoring
+* additionalMonitoringIndicator.coding 1..1 
+* additionalMonitoringIndicator.coding.code = #BlackTriangleMonitoring
+* additionalMonitoringIndicator.text 1..1
+* additionalMonitoringIndicator.text ^short =  "Info for black triangle warning if existing"
 

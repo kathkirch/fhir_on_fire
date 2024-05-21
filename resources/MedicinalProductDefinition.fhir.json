@@ -1,7 +1,7 @@
 {
     "resourceType": "MedicinalProductDefinition",
     "meta" : {
-        "profile": "http://localhost.org/StructureDefinition/mpdProfile"
+        "profile": ["http://localhost.org/StructureDefinition/mpdProfile"]
     },
     "identifier": [{
       "value": "1-19251"
@@ -436,6 +436,13 @@
     }],
     "statusDate": "2024-01-24",
     "additionalMonitoringIndicator" : {
-        "text": "Info for black triangle if existing"
+        "coding": [
+            {
+                "system": "http://hl7.org/fhir/medicinal-product-additional-monitoring",
+                "code": "BlackTriangleMonitoring",
+                "display": "Requirement for Black Triangle Monitoring"
+            }
+		],
+		"text": "Info for black triangle if existing"
     }
   }

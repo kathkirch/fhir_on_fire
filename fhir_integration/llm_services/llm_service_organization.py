@@ -1,4 +1,4 @@
-# from transformers import pipeline
+from fhir_integration.llm_services.llm_single import LLMSingle
 from openai import OpenAI
 from fhir_integration.services.secrets import access_secret_version
 
@@ -10,7 +10,7 @@ client = OpenAI(
     organization=openai_organization_id,
 )
 
-class LLMService:
+class LLMServiceOrganization(LLMSingle):
     
     def __init__(self):
         # self.extractor = pipeline('question-answering',  model="deepset/roberta-base-squad2")

@@ -26,11 +26,11 @@ from fhir.resources.organization import Organization
 #     "fullName":
 #     "nameDoseFormPart":
 #     "nameStrengthPart":
-#     "namePopulationPart":
+#     "namePopulationPart": kann
 #     "modeOfAction":
 #     "indication":
 #     "creationDate":
-#     "blackTriangle": 
+#     "blackTriangle": kann
 #     # attributes to create proper mpd
 #     "countActiveIngredients": 
 #     "countAdjuvantIngredients":
