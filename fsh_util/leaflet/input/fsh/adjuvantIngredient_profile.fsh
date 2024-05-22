@@ -13,17 +13,13 @@ Description: "Custom profile for an adjuvant Ingredient focusing on specific use
 
 * role 1..1
 * role only CodeableConcept
-* role.coding ^slicing.discriminator.type = #pattern
-* role.coding ^slicing.discriminator.path = "code"
-* role.coding ^slicing.rules = #open
 
-* role.coding contains activeRole 1..1
-* role.coding[activeRole].system = "http://hl7.org/fhir/ingredient-role"
-* role.coding[activeRole].system 1..1
-* role.coding[activeRole].code = #100000072073
-* role.coding[activeRole].code 1..1
-* role.coding[activeRole].display = "adjuvant"
-* role.coding[activeRole].display 1..1
+* role.coding.system = "http://hl7.org/fhir/ingredient-role"
+* role.coding.system 1..1
+* role.coding.code = #100000072073
+* role.coding.code 1..1
+* role.coding.display = "adjuvant"
+* role.coding.display 1..1
 
 * substance 1..1
 * substance.code 1..1

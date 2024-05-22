@@ -13,8 +13,8 @@ Description: "Custom MedicinalProductDefinition profile for displaying informati
 * name.productName 1..1 MS
 * name.productName ^short = "the full product name, which is also presented on the package."
 
-* name.part ^slicing.discriminator.type = #pattern
-* name.part ^slicing.discriminator.path = "type"
+* name.part ^slicing.discriminator.type = #value
+* name.part ^slicing.discriminator.path = "type.coding.code"
 * name.part ^slicing.rules = #open
 
 * name.part contains doseFormPart 1..1 MS
@@ -44,11 +44,14 @@ Description: "Custom MedicinalProductDefinition profile for displaying informati
 * name.usage.jurisdiction = urn:iso:std:iso:3166#AT
 * name.usage.language = urn:ietf:bcp:47#de
 
-* contact ^slicing.discriminator.type = #pattern
-* contact ^slicing.discriminator.path = "type"
+* contact ^slicing.discriminator.type = #value
+* contact ^slicing.discriminator.path = "type.text"
 * contact ^slicing.rules = #open
 * contact contains manufacturer 1..1 MS
 * contact contains authorizationHolder 1..1 MS
+* contact[manufacturer].type.text = "Hersteller"
+* contact[authorizationHolder].type.text = "Zulasser"
+
 * contact[manufacturer].contact only Reference(Organization)
 * contact[authorizationHolder].contact only Reference(Organization)
 
@@ -59,17 +62,20 @@ Description: "Custom MedicinalProductDefinition profile for displaying informati
 * indication ^short = "The indication described in leaflet" 
 
 * contained ^short = "Contained resources to ingredients"
+* contained only Ingredient
 
-* contained ^slicing.discriminator.type = #profile
-* contained ^slicing.discriminator.path = "ingredient"
+* contained ^slicing.discriminator.type = #value
+* contained ^slicing.discriminator.path = "meta.profile"
 * contained ^slicing.rules = #open
 
-* contained contains ActiveIngredient 1..1 MS
+* contained contains ActiveIngredient 1..* MS
 * contained contains AdjuvantIngredient 0..* 
-
 
 * contained[ActiveIngredient] only active-ingredient
 * contained[AdjuvantIngredient] only adjuvant-ingredient
+
+* contained[ActiveIngredient].meta.profile = "http://localhost.org/StructureDefinition/active-ingredient"
+* contained[AdjuvantIngredient].meta.profile = "http://localhost.org/StructureDefinition/adjuvant-ingredient"
 
 * statusDate 1..1 MS
 * statusDate ^short = "Date when leaflet was created"
@@ -77,8 +83,8 @@ Description: "Custom MedicinalProductDefinition profile for displaying informati
 * additionalMonitoringIndicator 0..1
 * additionalMonitoringIndicator ^short = "Info for black triangle monitoring if existing in leaflet"
 * additionalMonitoringIndicator only CodeableConcept 
-* additionalMonitoringIndicator from BlackTriangleMonitoring
 * additionalMonitoringIndicator.coding 1..1 
+* additionalMonitoringIndicator.coding.system = "http://hl7.org/fhir/medicinal-product-additional-monitoring" 
 * additionalMonitoringIndicator.coding.code = #BlackTriangleMonitoring
 * additionalMonitoringIndicator.text 1..1
 * additionalMonitoringIndicator.text ^short =  "Info for black triangle warning if existing"

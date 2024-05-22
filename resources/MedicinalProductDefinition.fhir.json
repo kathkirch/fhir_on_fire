@@ -12,7 +12,8 @@
     },
     "name" : [{
         "productName" : "Buscopan plus Paracetamol 10mg/ 500 mg Filmtabletten",
-        "part" : [{
+        "part" : [
+        {
           "part" : "Filmtabletten",
           "type" : {
             "coding" : [{
@@ -28,8 +29,8 @@
             "type" : {
                 "coding" : [{
                 "system" : "http://hl7.org/fhir/medicinal-product-name-part-type",
-                "code" : "FormulationPart",
-                "display" : "Formulation part"
+                "code" : "StrengthPart",
+                "display" : "Strength part"
                 }],
             "text": "10mg / 500mg"
             }
@@ -68,30 +69,38 @@
         }]
     }],
     "contact" : [{
+        "type": {
+					"text": "Hersteller"
+        },
         "contact": {
-            "type": {
-                "text": "Manufacturer"
-            },
             "reference": "Organization/id_manufacturer"
         }
     },
     {
+        "type": {
+					"text": "Zulasser"
+        },
         "contact": {
-            "type": {
-                "text": "Marketing Authorization Holder"
-            },
             "reference": "Organization/basg"
         }
     }],
     "description" :  "Description of mode of action of the medication",
     "indication" : "Buscopan plus Paracetamol Filmtabletten werden angewendet bei krampfartigen Schmerzen im Bereich des Magen-Darm-Traktes, der Gallen- und Harnwege und der weiblichen Geschlechtsorgane während der Monatsblutung",
-    "contained" : [{
+    "contained" : [
+		{
         "resourceType" : "Ingredient",
+				"id": "hyosing-n-butylbromid",
         "meta": {
-            "profile": "http://localhost.org/StructureDefinition/active-ingredient"
+            "profile": ["http://localhost.org/StructureDefinition/active-ingredient"]
         },
-        "id" : "Hyoscin-N-butylbromid",
+        "identifier": {
+            "value": "Hyoscin-N-butylbromid"
+          },
         "status" : "active",
+        "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Active Ingredient</b></p><p><b>Name:</b> Hyoscin-N-butylbromid</p></div>"
+        },
         "for" : [{
             "reference" : "#"
         }],
@@ -105,10 +114,11 @@
         "substance" : {
             "code" : {
                 "concept" : {
+                    "text": "Hyosin-N-Butylbromide",
                     "coding" : [{
-                    "system" : "http://snomed.info/sct",
-                    "code" : "395739004",
-                    "display" : "Hyoscine N butylbromide"
+                        "system" : "http://snomed.info/sct",
+                        "code" : "395739004",
+                        "display" : "Hyoscine N butylbromide"
                     }]
                 }
             },
@@ -116,14 +126,15 @@
                 "presentationRatio" : {
                     "numerator" : {
                         "value" : 10,
-                        "unit" : "mg",
-                        "system" : "http://unitsofmeasure.org",
-                        "code" : "mg"
+                        "unit" : "mg"
+                       
+                    
                     },
                     "denominator" : {
                         "value" : 1,
-                        "system" : "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
-                        "code" : "TAB"
+                        "unit": "Tablette"
+                      
+                      
                     }
                 }
             }]
@@ -131,8 +142,18 @@
     },
     {
         "resourceType" : "Ingredient",
-        "id" : "paracetamol",
+        "id": "paracetamol",
+        "identifier": {
+            "value": "Paracetamol"
+        },
         "status" : "active",
+        "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Active Ingredient</b></p><p><b>Name:</b> Paracetamol</p></div>"
+        },
+        "meta": {
+            "profile": ["http://localhost.org/StructureDefinition/active-ingredient"]
+        },
         "for" : [{
             "reference" : "#"
         }],
@@ -145,26 +166,24 @@
         },
         "substance" : {
             "code" : {
-            "concept" : {
-                "coding" : [{
-                "system" : "http://snomed.info/sct",
-                "code" : "387517004",
-                "display" : "Paracetamol"
-                }]
-            }
+                "concept" : {
+                    "text": "Paracetamol",
+                    "coding" : [{
+                        "system" : "http://snomed.info/sct",
+                        "code" : "387517004",
+                        "display" : "Paracetamol"
+                    }]
+                }
             },
             "strength" : [{
             "presentationRatio" : {
                 "numerator" : {
                 "value" : 500,
-                "unit" : "mg",
-                "system" : "http://unitsofmeasure.org",
-                "code" : "mg"
+                "unit" : "mg"
                 },
                 "denominator" : {
                     "value" : 1,
-                    "system" : "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
-                    "code" : "TAB"
+                    "unit": "Tablette"
                 }
             }
             }]
@@ -172,7 +191,17 @@
     },
     {
         "resourceType" : "Ingredient",
-        "id" : "Ethylcellulose",
+		"id": "ethylcellulose",
+        "identifier": {
+            "value": "Ethylcellulose"
+        },
+        "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Adjuvant Ingredient</b></p><p><b>Name:</b> Ethylcellulose</p></div>"
+        },
+        "meta": {
+            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+        },
         "status" : "active",
         "for" : [{
         "reference" : "#"
@@ -194,8 +223,18 @@
     },
     {
         "resourceType" : "Ingredient",
-        "id" : "hochdisperseKieselsaeure",
+		"id": "hochdisperseKieselsaeure",
+        "identifier": {
+            "value": "HochdisperseKieselsaeure"
+        },
+        "meta": {
+            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+        },
         "status" : "active",
+        "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Adjuvant Ingredient</b></p><p><b>Name:</b> hochdisperse Kieselsäure</p></div>"
+        },
         "for" : [{
           "reference" : "#"
         }],
@@ -216,8 +255,18 @@
     },
     {
         "resourceType" : "Ingredient",
-        "id" : "Magnesiumstearat",
+		"id": "magnesiumstearat",
+        "identifier": {
+            "value": "Magnesiumstearat"
+        },
+        "meta": {
+            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+        },
         "status" : "active",
+        "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Adjuvant Ingredient</b></p><p><b>Name:</b> Magnesiumstearat</p></div>"
+        },
         "for" : [{
             "reference" : "#"
         }],
@@ -238,8 +287,18 @@
     },
     {
         "resourceType" : "Ingredient",
-        "id" : "Maisstaerke",
+		"id": "maisstaerke",
+        "identifier": {
+            "value": "Maisstaerke"
+        },
+        "meta": {
+            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+        },
         "status" : "active",
+        "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Adjuvant Ingredient</b></p><p><b>Name:</b> Maisstärke</p></div>"
+        },
         "for" : [{
             "reference" : "#"
         }],
@@ -260,8 +319,18 @@
     },
     {
         "resourceType" : "Ingredient",
-        "id" : "mikrokristallineCellulose",
+		"id": "mikrokristallineCellulose",
+        "identifier": {
+            "value": "MikrokristallineCellulose"
+        },
+        "meta": {
+            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+        },
         "status" : "active",
+        "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Adjuvant Ingredient</b></p><p><b>Name:</b> mikrokristalline Cellulose</p></div>"
+        },
         "for" : [{
             "reference" : "#"
         }],
@@ -282,8 +351,18 @@
     },
     {
         "resourceType" : "Ingredient",
-        "id" : "CarmelloseNatrium",
+		"id": "carmelloseNatrium",
+        "identifier": {
+            "value": "CarmelloseNatrium"
+        },
+        "meta": {
+            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+        },
         "status" : "active",
+        "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Adjuvant Ingredient</b></p><p><b>Name:</b> Carmellose-Natrium</p></div>"
+        },
         "for" : [{
             "reference" : "#"
         }],
@@ -304,8 +383,18 @@
     },
     {
         "resourceType" : "Ingredient",
-        "id" : "Dimeticon",
+		"id": "dimeticon",
+        "identifier": {
+            "value": "Dimeticon"
+        },
+        "meta": {
+            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+        },
         "status" : "active",
+        "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Adjuvant Ingredient</b></p><p><b>Name:</b> Dimeticon</p></div>"
+        },
         "for" : [{
             "reference" : "#"
         }],
@@ -326,8 +415,18 @@
     },
     {
         "resourceType" : "Ingredient",
-        "id" : "Hypromellose",
+		"id": "hypromellose",
+        "identifier": {
+            "value": "Hypromellose"
+        },
+        "meta": {
+            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+        },
         "status" : "active",
+        "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Adjuvant Ingredient</b></p><p><b>Name:</b> Hypromellose</p></div>"
+        },
         "for" : [{
             "reference" : "#"
         }],
@@ -348,8 +447,18 @@
     },
     {
         "resourceType" : "Ingredient",
-        "id" : "Macrogol6000",
+		"id": "macrogol6000",
+        "identifier": {
+            "value": "Macrogol6000"
+        },
+        "meta": {
+            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+        },
         "status" : "active",
+        "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Adjuvant Ingredient</b></p><p><b>Name:</b> Marcogol 6000</p></div>"
+        },
         "for" : [{
             "reference" : "#"
         }],
@@ -370,8 +479,18 @@
     },
     {
         "resourceType" : "Ingredient",
-        "id" : "MethacrylsaeureMethylmethacrylatCopolymer",
+		"id": "methacrylsaeureMethylmethacrylatCopolymer",
+        "identifier": {
+            "value": "MethacrylsaeureMethylmethacrylatCopolymer"
+        },
+        "meta": {
+            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+        },
         "status" : "active",
+        "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Adjuvant Ingredient</b></p><p><b>Name:</b> Methacrylsäure-Methylmethacrylat-Copolymer</p></div>"
+        },
         "for" : [{
             "reference" : "#"
         }],
@@ -392,8 +511,18 @@
     },
     {
         "resourceType" : "Ingredient",
-        "id" : "Talkum",
+		"id": "talkum",
+        "identifier": {
+            "value": "Talkum"
+        },
+        "meta": {
+            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+        },
         "status" : "active",
+        "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Adjuvant Ingredient</b></p><p><b>Name:</b> Talkum</p></div>"
+        },
         "for" : [{
             "reference" : "#"
         }],
@@ -414,8 +543,18 @@
     },
     {
         "resourceType" : "Ingredient",
-        "id" : "TitandioxidE171",
+		"id": "titandioxidE171",
+        "identifier": {
+            "value": "TitandioxidE171"
+        },
+         "meta": {
+            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+        },
         "status" : "active",
+        "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Adjuvant Ingredient</b></p><p><b>Name:</b> Titandioxid (E171)</p></div>"
+        },
         "for" : [{
             "reference" : "#"
         }],
