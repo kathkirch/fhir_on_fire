@@ -13,7 +13,7 @@ def map_to_organization(extracted_organization_info):
 
         
     )
-    street_number = extracted_organization_info.get('address_street_number')
+    street_number = extracted_organization_info.get("address_street_number")
     if street_number:
        organization.contact = [{
             "address": {
@@ -45,8 +45,8 @@ def map_to_organization(extracted_organization_info):
             }
         }] 
 
-    fax = extracted_organization_info.get('fax')
-    url = extracted_organization_info.get('webAdress')
+    fax = extracted_organization_info.get("fax")
+    url = extracted_organization_info.get("webAdress")
     
     if fax: 
         if not organization.contact[0].telecom:

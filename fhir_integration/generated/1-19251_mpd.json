@@ -2,14 +2,14 @@
     "nameDoseFormPart": "Filmtabletten",
     "nameStrengthPart": "10 mg/500 mg",
     "namePopulationPart": null,
-    "fullName": "Buscopan\u00ae plus Paracetamol 10 mg/ 500 mg Filmtabletten",
+    "fullName": "Buscopan® plus Paracetamol 10 mg/ 500 mg Filmtabletten",
     "admission_nr": "1-19251",
-    "modeOfAction": "\"Hyoscin-N-butylbromid besitzt eine krampfl\u00f6sende Wirkung auf die glatte Muskulatur des Magen-Darm-Traktes, der Gallen- und Harnwege und der weiblichen Geschlechtsorgane; Paracetamol hat eine rasch einsetzende schmerzstillende, fiebersenkende und entz\u00fcndungshemmende Wirkung.\"",
-    "indication": "Krampfartige Schmerzen im Bereich des Magen-Darm-Traktes, der Gallen- und Harnwege, der weiblichen Geschlechtsorgane w\u00e4hrend der Monatsblutung.",
-    "creationDate": "2024-01-01",
+    "modeOfAction": "Hyoscin-N-butylbromid besitzt eine krampflösende Wirkung auf die glatte Muskulatur des Magen-Darm-Traktes, der Gallen- und Harnwege und der weiblichen Geschlechtsorgane; Paracetamol hat eine rasch einsetzende schmerzstillende, fiebersenkende und entzündungshemmende Wirkung.",
+    "indication": "krampfartigen Schmerzen im Bereich des Magen-Darm-Traktes, der Gallen- und Harnwege und der weiblichen Geschlechtsorgane während der Monatsblutung",
+    "creationDate": "2024-01-31",
     "blackTriangle": null,
     "name_strength_active": "Hyoscin-N-butylbromid, 10 mg, Filmtablette; Paracetamol, 500 mg, Filmtablette",
-    "activeIngredient": "Die Wirkstoffe des Medikaments \"Buscopan\u00ae plus Paracetamol 10 mg/ 500 mg Filmtabletten\" sind:\n\n- Hyoscin-N-butylbromid (10 mg pro Filmtablette)\n- Paracetamol (500 mg pro Filmtablette)",
-    "name_strength_adjuvant": "Ethylcellulose; hochdisperse Kiesels\u00e4ure; Magnesiumstearat; Maisst\u00e4rke; mikrokristalline Cellulose; Carmellose-Natrium; Dimeticon; Hypromellose; Macrogol 6000; Methacryls\u00e4ure-Methylmethacrylat-Copolymer; Talkum; Titandioxid (E171)",
-    "adjuvantIngredient": "Die Hilfsstoffe oder sonstigen Bestandteile des Medikaments Buscopan plus Paracetamol 10 mg/500 mg Filmtabletten sind:\n\n**Tablettenkern:**\n- Ethylcellulose\n- hochdisperse Kiesels\u00e4ure\n- Magnesiumstearat\n- Maisst\u00e4rke\n- mikrokristalline Cellulose\n- Carmellose-Natrium\n\n**Tabletten\u00fcberzug:**\n- Dimeticon\n- Hypromellose\n- Macrogol 6000\n- Methacryls\u00e4ure-Methylmethacrylat-Copolymer\n- Talkum\n- Titandioxid (E171)"
+    "activeIngredient": "Die aktiven Wirkstoffe von Buscopan plus Paracetamol sind:\n\n- Hyoscin-N-butylbromid (10 mg pro Filmtablette)\n- Paracetamol (500 mg pro Filmtablette)",
+    "name_strength_adjuvant": "Ethylcellulose; Hochdisperse Kieselsäure; Magnesiumstearat; Maisstärke; Mikrokristalline Cellulose; Carmellose-Natrium; Dimeticon; Hypromellose; Macrogol 6000; Methacrylsäure-Methylmethacrylat-Copolymer; Talkum; Titandioxid (E171)",
+    "adjuvantIngredient": "Die Hilfsstoffe oder sonstigen Bestandteile des Medikaments \"Buscopan plus Paracetamol\" sind:\n\n**Tablettenkern:**\n- Ethylcellulose\n- Hochdisperse Kieselsäure\n- Magnesiumstearat\n- Maisstärke\n- Mikrokristalline Cellulose\n- Carmellose-Natrium\n\n**Tablettenüberzug:**\n- Dimeticon\n- Hypromellose\n- Macrogol 6000\n- Methacrylsäure-Methylmethacrylat-Copolymer\n- Talkum\n- Titandioxid (E171)"
 }

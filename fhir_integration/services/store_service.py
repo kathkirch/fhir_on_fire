@@ -9,4 +9,7 @@ class StorageService:
     def store_organization(self, organization):
         created_resource = self.client.save_resource('Organization', organization.dict())
         return created_resource
-        
+    
+    def store_mpd(self, mpd):
+        created_resource = self.client.save_resource('MedicinalProductDefinition', mpd.dict())
+        return created_resource        

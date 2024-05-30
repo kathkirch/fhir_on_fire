@@ -28,9 +28,9 @@
             "part" : "10mg / 500mg",
             "type" : {
                 "coding" : [{
-                "system" : "http://hl7.org/fhir/medicinal-product-name-part-type",
-                "code" : "StrengthPart",
-                "display" : "Strength part"
+                    "system" : "http://hl7.org/fhir/medicinal-product-name-part-type",
+                    "code" : "StrengthPart",
+                    "display" : "Strength part"
                 }],
             "text": "10mg / 500mg"
             }
@@ -89,13 +89,13 @@
     "contained" : [
 		{
         "resourceType" : "Ingredient",
-				"id": "hyosing-n-butylbromid",
+		"id": "hyosing-n-butylbromid",
         "meta": {
             "profile": ["http://localhost.org/StructureDefinition/active-ingredient"]
         },
         "identifier": {
             "value": "Hyoscin-N-butylbromid"
-          },
+        },
         "status" : "active",
         "text": {
             "status": "generated",
@@ -133,8 +133,6 @@
                     "denominator" : {
                         "value" : 1,
                         "unit": "Tablette"
-                      
-                      
                     }
                 }
             }]

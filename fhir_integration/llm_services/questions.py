@@ -68,7 +68,7 @@ questions_mpd = {
     },
     "admission_nr": {"question": (
         "Suche die Zulassungsnummer des Medikaments. "
-        "Deine Antwort soll ausschliessliech die Zulassungsnummer beinhalten"
+        "Deine Antwort soll ausschliessliech die reine Zulassungsnummer beinhalten"
     )},
     "modeOfAction": {"question": (
         "Suche die Wirkungsweise des Medikaments. "
