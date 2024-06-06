@@ -1,6 +1,6 @@
 Alias: ingredient-role = http://hl7.org/fhir/ingredient-role
 
-Profile: MPD_Profile
+Profile: MPDProfile
 Parent: MedicinalProductDefinition
 Id: mpdProfile
 Title: "Leaflet MedicinalProductDefinition"
@@ -15,7 +15,8 @@ Description: "Custom MedicinalProductDefinition profile for displaying informati
 
 * name.part ^slicing.discriminator.type = #value
 * name.part ^slicing.discriminator.path = "type.coding.code"
-* name.part ^slicing.rules = #open
+* name.part ^slicing.rules = #closed
+* name.part ^slicing.description = "The different name parts are differentiated by code, content is captured by name.part.part element"
 
 * name.part contains doseFormPart 1..1 MS
 * name.part contains strengthPart 1..1 MS 
@@ -47,11 +48,11 @@ Description: "Custom MedicinalProductDefinition profile for displaying informati
 * contact ^slicing.discriminator.type = #value
 * contact ^slicing.discriminator.path = "type.text"
 * contact ^slicing.rules = #open
+* contact ^slicing.description = "There must be a reference to organization resouce which holds contact information for maufacturer and one to marketing authorization holder"
 * contact contains manufacturer 1..1 MS
 * contact contains authorizationHolder 1..1 MS
 * contact[manufacturer].type.text = "Hersteller"
 * contact[authorizationHolder].type.text = "Zulasser"
-
 * contact[manufacturer].contact only Reference(Organization)
 * contact[authorizationHolder].contact only Reference(Organization)
 
@@ -67,12 +68,12 @@ Description: "Custom MedicinalProductDefinition profile for displaying informati
 * contained ^slicing.discriminator.type = #value
 * contained ^slicing.discriminator.path = "meta.profile"
 * contained ^slicing.rules = #open
+* contained ^slicing.description = "In the contained there must be at least one ActiveIngredient-Resource Profile and 0..* AdjuvantIngredient"
 
-* contained contains ActiveIngredient 1..* MS
-* contained contains AdjuvantIngredient 0..* 
+* contained contains ActiveIngredient 1..* MS and AdjuvantIngredient 0..* 
 
-* contained[ActiveIngredient] only active-ingredient
-* contained[AdjuvantIngredient] only adjuvant-ingredient
+* contained[ActiveIngredient] only ActiveIngredient
+* contained[AdjuvantIngredient] only AdjuvantIngredient
 
 * contained[ActiveIngredient].meta.profile = "http://localhost.org/StructureDefinition/active-ingredient"
 * contained[AdjuvantIngredient].meta.profile = "http://localhost.org/StructureDefinition/adjuvant-ingredient"

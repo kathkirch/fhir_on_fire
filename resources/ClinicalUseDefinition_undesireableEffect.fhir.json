@@ -7,6 +7,9 @@
       "status" : "generated",
       "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      \n      <p>SideEffect</p>\n    \n    </div>"
     },
+    "meta" : {
+      "profile": ["http://localhost:8080/fhir/StructureDefinition/undesirable-effect"]
+    },
     "type" : "undesirable-effect",
     "undesirableEffect" : {
       "symptomConditionEffect": {
@@ -19,7 +22,9 @@
             "system" : "http://hl7.org/fhir/undesirable-effect-frequency",
             "code" : "Common",
             "display" : "Common"
-        }]
+        }],
+        
+        "text": "frequency"
       }
     }
   }

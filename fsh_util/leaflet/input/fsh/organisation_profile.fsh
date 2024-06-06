@@ -11,11 +11,7 @@ Description: "A custom profile for Organization-Resources that is used to displa
 * name ^short = "Name of organisation, the whole name of organization is required"
 * name 1..1 MS
 
-// * ^slicing.discriminator.type = #pattern
-// * ^slicing.discriminator.path = "contact"
-// * ^slicing.rules = #open
-
-* contact.telecom ^slicing.discriminator.type = #pattern
+* contact.telecom ^slicing.discriminator.type = #value
 * contact.telecom ^slicing.discriminator.path = "system"
 * contact.telecom ^slicing.rules = #open
 

@@ -3,11 +3,11 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: leafletIG
-canonical: http://localhost.org
-name: leaflet
+id: austrianMedicationLeaflet
+canonical: http://localhost:8080/fhir
+name: austrianMedicationLeaflet
 # title: Example Title
-# description: Example Implementation Guide for getting started with SUSHI
+description: Implementation Guide to describe every contint in required in Austrian medication leaflet referred in AMG paragraph 16.
 status: draft # draft | active | retired | unknown
 version: 0.1.0
 fhirVersion: 5.0.0 # https://www.hl7.org/fhir/valueset-FHIR-version.html

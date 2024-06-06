@@ -3,6 +3,9 @@
   "identifier": [{
       "value": "NameInteraction"
   }],
+  "meta" : {
+    "profile": ["http://localhost:8080/fhir/StructureDefinition/interaction"]
+  },
   "text" : {
     "status" : "generated",
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      \n      <p>Interaction</p>\n    \n    </div>"

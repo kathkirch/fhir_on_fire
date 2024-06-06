@@ -3,6 +3,9 @@
     "identifier": [{
         "value": "NameWarning"
     }],
+    "meta" : {
+      "profile": ["http://localhost:8080/fhir/StructureDefinition//warning"]
+    },
     "text" : {
       "status" : "generated",
       "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      \n      <p>Warning</p>\n    \n    </div>"
