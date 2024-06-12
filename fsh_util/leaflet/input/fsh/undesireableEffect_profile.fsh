@@ -4,9 +4,9 @@ Id: undesirable-effect
 Title: "Undesirable Effect"
 Description: "A custom profile for ClinicalUseDefinition-Resources tailored to describe an undesirable effect"
 
-* identifier 1..1 MS
-* identifier.value ^short = "Buzzword of the side effect"
-* identifier.value 1..1 MS
+// * identifier 1..1 MS
+// * identifier.value ^short = "Buzzword of the side effect"
+// * identifier.value 1..1 MS
 
 * type = #undesirable-effect
 

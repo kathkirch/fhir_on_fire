@@ -4,9 +4,9 @@ Id: active-ingredient
 Title: "Active Ingredient"
 Description: "Custom profile for an active Ingredient focusing on specific use to describe medication leaflet of medicinal product"
 
-* identifier 1..1 MS
-* identifier.value ^short = "Name of the active ingredient"
-* identifier.value 1..1 MS
+// * identifier 1..1 MS
+// * identifier.value ^short = "Name of the active ingredient"
+// * identifier.value 1..1 MS
 
 * for 1..1 MS
 * for only Reference(MedicinalProductDefinition)

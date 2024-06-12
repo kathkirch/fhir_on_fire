@@ -19,7 +19,7 @@ class ValidationService:
     def validate_medicationKnowledge(self, medicationKnowledge):
         return self.client.validate_resource('MedicationKnowledge', medicationKnowledge.dict())
 
-    def validate_clinicalUseDefinition(self, validate_clinicalUseDefinition):
+    def validate_clinicalUseDefinition(self, clinicalUseDefinition):
         return self.client.validate_resource('ClinicalUseDefinition', clinicalUseDefinition.dict())
 
 

@@ -1,8 +1,5 @@
 {
     "resourceType" : "ClinicalUseDefinition",
-    "identifier": [{
-        "value": "NameSideEffect"
-    }],
     "text" : {
       "status" : "generated",
       "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      \n      <p>SideEffect</p>\n    \n    </div>"

@@ -1,30 +1,10 @@
 {
     "resourceType": "MedicationKnowledge",
-    "identifier": [{
-        "value": "1-19251"
-    }],
     "status": "active",
     "meta" : {
         "profile": ["http://localhost:8080/fhir/StructureDefinition/medicationKnowledge-leaflet"]
       },
     "indicationGuideline": [{
-        "indication": [
-        {
-            "concept": {
-                "text": "krampfartige Schmerzen im Magen-Darm-Trakt"
-            }
-        },
-        {
-            "concept": {
-                "text": "krampfartige Schmerzen der Gallen- und Harnwege"
-            }
-        },
-        {
-            "concept": {
-                "text": "krampfartige Schmerzen der weiblichen Geschlechtsorgane während der Monatsblutung"
-            }
-        }
-        ],
         "dosingGuideline": [
         {
             "dosage": [{
@@ -83,15 +63,7 @@
                     "text": "Maximale Einnahmedauer wenn nicht anders ärztlich verordnet"
                 },
                 "dosage": [{
-                    "patientInstruction": "Ohne ärztliche Beratung sollen Buscopan plus Paracetamol 10 mg/ 500 mg Filmtabletten nicht länger als 3 Tage eingenommen werden.",
-                    "timing": {
-                        "repeat": {
-                            "boundsDuration": {
-                                "value": 3,
-                                "unit": "days"
-                            }
-                        }
-                    }
+                    "patientInstruction": "Ohne ärztliche Beratung sollen Buscopan plus Paracetamol 10 mg/ 500 mg Filmtabletten nicht länger als 3 Tage eingenommen werden."
                 }]
             }]
         },    
@@ -141,18 +113,7 @@
     "storageGuideline": [{
         "note": [{
             "text": "Nicht über 30 °C lagern. Bewahren Sie dieses Arzneimittel für Kinder unzugänglich auf. Sie dürfen dieses Arzneimittel nach dem auf dem Umkarton angegebenen Verfalldatum nicht mehr verwenden. Das Verfalldatum bezieht sich auf den letzten Tag des angegebenen Monats."
-        }],
-        "environmentalSetting": [{
-            "type": {
-                "text": "Celsius"
-              },
-              "valueRange": {
-                "high": {
-                    "value": 30
-                }
-              }
         }]
-
     }],    
     "definitional": {
         "definition": [{

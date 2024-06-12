@@ -4,9 +4,9 @@ Id: warning
 Title: "Warning"
 Description: "A custom profile for the ClinicalUseDefinition-Resource that is used to display a warning regarding a medication contained in the medication leaflet"
 
-* identifier 1..1 MS
-* identifier.value ^short = "warning as buzzword"
-* identifier.value 1..1 MS
+// * identifier 1..1 MS
+// * identifier.value ^short = "warning as buzzword"
+// * identifier.value 1..1 MS
 
 
 * type = #warning

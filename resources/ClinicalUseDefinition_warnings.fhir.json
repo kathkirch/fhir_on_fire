@@ -1,8 +1,5 @@
 {
     "resourceType" : "ClinicalUseDefinition",
-    "identifier": [{
-        "value": "NameWarning"
-    }],
     "meta" : {
       "profile": ["http://localhost:8080/fhir/StructureDefinition//warning"]
     },

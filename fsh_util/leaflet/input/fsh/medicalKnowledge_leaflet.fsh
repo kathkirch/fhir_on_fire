@@ -4,14 +4,9 @@ Id: medicationKnowledge-leaflet
 Title: "Leaflet MediactionKnowledge"
 Description: "Custom MedicationKnowledge Profile used to describe infos from medication leaflet"
 
-* identifier 1..1
-* identifier.value ^short = "Admission number on medication package"
-* identifier.value 1..1 MS
-
-* indicationGuideline 1..* MS
-* indicationGuideline.indication 1..*
-* indicationGuideline.indication.concept.text 1..1
-* indicationGuideline.indication.concept.text ^short = "The various indications described in the package leaflet for which the dosage applies"
+// * identifier 1..1
+// * identifier.value ^short = "Admission number on medication package"
+// * identifier.value 1..1 MS
 
 * indicationGuideline.dosingGuideline ^slicing.discriminator.type = #value
 * indicationGuideline.dosingGuideline ^slicing.discriminator.path = "dosage.type.coding.code"
@@ -105,11 +100,6 @@ Description: "Custom MedicationKnowledge Profile used to describe infos from med
 * storageGuideline 1..* 
 * storageGuideline.note.text 1..1
 * storageGuideline.note.text ^short = "Description of storage guideline in text"
-* storageGuideline.environmentalSetting 0..1
-* storageGuideline.environmentalSetting.type ^short = "Categorization of the setting e.g coding for celsius"
-* storageGuideline.environmentalSetting.type 1..1
-* storageGuideline.environmentalSetting.valueRange ^short = "Value range of the environmental setting"
-* storageGuideline.environmentalSetting.valueRange.high.value 0..1
 
 * definitional.definition 1..1 MS
 * definitional.definition only Reference (MedicinalProductDefinition)

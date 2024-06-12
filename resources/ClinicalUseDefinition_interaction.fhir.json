@@ -13,7 +13,12 @@
   "type" : "interaction",
   "interaction" : {
     "type": {
-      "text": "Placeholder for interaction description"
+      "text": "Placeholder for type of interaction drug to drug, acohol etc."
+    },
+    "effect": {
+      "concept": {
+        "text": "the interaction"
+      }
     }
   }
 }

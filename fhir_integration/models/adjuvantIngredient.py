@@ -7,9 +7,6 @@ def map_to_adjuvant_ingredient(name):
     data_in = {
         "resourceType" : "Ingredient",
 		"id": unique_id,
-        "identifier": {
-            "value": name
-        },
         "text": {
             "status": "generated",
             "div": f"<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Adjuvant Ingredient</b></p><p><b>Name:</b> {name}</p></div>"

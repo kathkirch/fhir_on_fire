@@ -8,7 +8,8 @@ class LLMMultiple(LLMServiceBase):
             'Du bist ein e-Health Experte der sich Informationen aus einem '
             'Medikamenten-Beipackzettel holt damit diese in einem späteren '
             'Schritt als FHIR-Ressource abgelegt werden können. '
-            'Extrahiere nur die nötige Information und antworte direkt auf die Frage'
+            'Extrahiere nur die nötige Information und antworte direkt auf die Frage. '
+            'Antworten sollten keine Querverweise auf andere Abschnitte oder Aufzählungszeichen enthalten'
         )
 
     def extract_info(self, leaflet_text):

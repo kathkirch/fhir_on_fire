@@ -16,7 +16,6 @@ def map_to_active_ingredient(name, strength, form):
         "meta" :  {
             "profile": ["http://localhost.org/StructureDefinition/active-ingredient"]
         },
-        "identifier" : {"value": name},
         "status" : "active",
         "text" : {
             "status": "generated",
