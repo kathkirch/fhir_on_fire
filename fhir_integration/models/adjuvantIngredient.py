@@ -12,7 +12,7 @@ def map_to_adjuvant_ingredient(name):
             "div": f"<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Adjuvant Ingredient</b></p><p><b>Name:</b> {name}</p></div>"
         },
         "meta": {
-            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+            "profile": ["http://localhost:8080/fhir/StructureDefinition/adjuvant-ingredient"]
         },
         "status" : "active",
         "for" : [{

@@ -10,7 +10,8 @@ class LLMSingle(LLMServiceBase):
             'Medikamenten-Beipackzettel holt damit diese in einem späteren '
             'Schritt als FHIR-Ressource abgelegt werden können. '
             'Extrahiere nur die nötige Information und antworte direkt auf die Frage. '
-            'Antworten sollten keine Querverweise auf andere Abschnitte oder Aufzählungszeichen enthalten. '
+            'Antworten sollten keine Querverweise auf andere Abschnitte im Beipackzettel enthalten. '
+            'Antworten sollten keine Aufzählungszeichen enthalten. '
         )
 
     def extract_info(self, leaflet_text):

@@ -5,7 +5,6 @@ Description: "A value set for active substances in medicinal products."
 * ^experimental = true
 * include codes from system http://snomed.info/sct where concept is-a #105590001 // Use the actual SNOMED CT hierarchy appropriate for active substances
 
-
 ValueSet: AdditionalInstruction
 Id: addition-instructions-value-set
 Title: "Additional Instruction Value Set"
@@ -22,7 +21,7 @@ Description: "A value set for orderable drugfrom of medicinal products"
 
 
 ValueSet: UnitsOfMeasure
-Id: 156
+Id: unitsofmeasure
 Title: "Units of measure ValueSet"
 Description: "A value set for units of measure to describe dosing and units"
 * ^experimental = true
@@ -43,7 +42,7 @@ Description: "A value set for dose forms"
 // * include codes from system http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic
 
 ValueSet: BlackTriangleMonitoring
-Id: 157
+Id: blacktrianglemonitoring
 Title: "Black Triangle ValueSet"
 Description: "Code System for black triangle monitoring information"
 * ^experimental = true
@@ -51,7 +50,7 @@ Description: "Code System for black triangle monitoring information"
 
 
 ValueSet: DosingInstructionCodes
-Id: 206
+Id: dosinginstructioncodes
 Title: "Instruction Codes for Medication Intake"
 Description: "A set of SNOMED CT codes describing various scenarios related to the administration of medication."
 * ^experimental = true

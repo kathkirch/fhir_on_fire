@@ -1,7 +1,7 @@
 import re
 from fhir.resources.clinicalusedefinition import ClinicalUseDefinition
 
-def map_to_interaction(extracted_interaction_info):
+def map_to_interaction(interaction):
     data_in = {  
         "resourceType" : "ClinicalUseDefinition",
         "meta" : {
@@ -14,10 +14,10 @@ def map_to_interaction(extracted_interaction_info):
         "type" : "interaction",
         "interaction" : {
             "type": {
-            "text": "Placeholder for type of interaction drug to drug, acohol etc."},
+            "text": "Wechselwirkung mit anderen Medikamenten"},
             "effect": {
                 "concept": {
-                    "text": "the interaction"
+                    "text": interaction
                 }
             }
         }
@@ -25,5 +25,10 @@ def map_to_interaction(extracted_interaction_info):
     interaction = ClinicalUseDefinition(**data_in)
     return interaction
 
-
-##TODO regex alcohol medication
+def split_interactions(interaction_string): 
+    entries = interaction_string.split('|')
+    interaction_list = []
+    for entry in entries:
+        entry = entry.strip()
+        interaction_list.append(entry)
+    return interaction_list

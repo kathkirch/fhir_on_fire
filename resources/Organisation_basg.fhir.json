@@ -1,10 +1,7 @@
 {
     "resourceType": "Organization",
-    "identifier": [{
-        "value": "basg"
-    }],
     "meta": {
-        "profile": ["http://localhost.org/StructureDefinition/medicinal-organization"]
+        "profile": ["http://localhost:8080/fhir/StructureDefinition/medicinal-organization"]
     },
     "name": "Bundesamt für Sicherheit im Gesundheitswesen",
     "contact": [

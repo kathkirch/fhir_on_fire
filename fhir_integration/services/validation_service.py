@@ -1,7 +1,6 @@
 from decimal import Decimal
 from collections import OrderedDict
 from datetime import date
-from decimal import Decimal
 from fhir_integration.services.fhir_client import FHIRClient
 
 class ValidationService: 
@@ -17,7 +16,8 @@ class ValidationService:
         return self.client.validate_resource('MedicinalProductDefinition', data)
     
     def validate_medicationKnowledge(self, medicationKnowledge):
-        return self.client.validate_resource('MedicationKnowledge', medicationKnowledge.dict())
+        data = convert_to_serializable(medicationKnowledge.dict())
+        return self.client.validate_resource('MedicationKnowledge', data)
 
     def validate_clinicalUseDefinition(self, clinicalUseDefinition):
         return self.client.validate_resource('ClinicalUseDefinition', clinicalUseDefinition.dict())

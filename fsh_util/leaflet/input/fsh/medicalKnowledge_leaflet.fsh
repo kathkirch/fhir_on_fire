@@ -4,9 +4,9 @@ Id: medicationKnowledge-leaflet
 Title: "Leaflet MediactionKnowledge"
 Description: "Custom MedicationKnowledge Profile used to describe infos from medication leaflet"
 
-// * identifier 1..1
-// * identifier.value ^short = "Admission number on medication package"
-// * identifier.value 1..1 MS
+* identifier 1..1
+* identifier.value ^short = "Admission number on medication package"
+* identifier.value 1..1 MS
 
 * indicationGuideline.dosingGuideline ^slicing.discriminator.type = #value
 * indicationGuideline.dosingGuideline ^slicing.discriminator.path = "dosage.type.coding.code"
@@ -54,7 +54,7 @@ Description: "Custom MedicationKnowledge Profile used to describe infos from med
 * indicationGuideline.dosingGuideline[maxDuration].dosage.dosage.patientInstruction 1..1
 * indicationGuideline.dosingGuideline[maxDuration].dosage.dosage.patientInstruction ^short = "Instructions for maximum intake duration"
 * indicationGuideline.dosingGuideline[maxDuration].dosage.dosage.timing ^short = "Timing event used to describe the maximum intake duration in units of time, e.g  days"
-* indicationGuideline.dosingGuideline[maxDuration].dosage.dosage.timing 1..1
+* indicationGuideline.dosingGuideline[maxDuration].dosage.dosage.timing 0..1
 * indicationGuideline.dosingGuideline[maxDuration].dosage.dosage.timing.repeat 1..1
 * indicationGuideline.dosingGuideline[maxDuration].dosage.dosage.timing.repeat.boundsDuration 1..1
 * indicationGuideline.dosingGuideline[maxDuration].dosage.dosage.timing.repeat.boundsDuration.unit 1..1 

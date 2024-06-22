@@ -1,7 +1,7 @@
 {
     "resourceType": "MedicinalProductDefinition",
     "meta" : {
-        "profile": ["http://localhost.org/StructureDefinition/mpdProfile"]
+        "profile": ["http://localhost:8080/fhir/StructureDefinition/mpdProfile"]
     },
     "identifier": [{
       "value": "1-19251"
@@ -91,7 +91,7 @@
         "resourceType" : "Ingredient",
 		"id": "hyosing-n-butylbromid",
         "meta": {
-            "profile": ["http://localhost.org/StructureDefinition/active-ingredient"]
+            "profile": ["http://localhost:8080/fhir/StructureDefinition/active-ingredient"]
         },
         "identifier": {
             "value": "Hyoscin-N-butylbromid"
@@ -150,7 +150,7 @@
             "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Active Ingredient</b></p><p><b>Name:</b> Paracetamol</p></div>"
         },
         "meta": {
-            "profile": ["http://localhost.org/StructureDefinition/active-ingredient"]
+            "profile": ["http://localhost:8080/fhir/StructureDefinition/active-ingredient"]
         },
         "for" : [{
             "reference" : "#"
@@ -198,7 +198,7 @@
             "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Adjuvant Ingredient</b></p><p><b>Name:</b> Ethylcellulose</p></div>"
         },
         "meta": {
-            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+            "profile": ["http://localhost:8080/fhir/StructureDefinition/adjuvant-ingredient"]
         },
         "status" : "active",
         "for" : [{
@@ -226,7 +226,7 @@
             "value": "HochdisperseKieselsaeure"
         },
         "meta": {
-            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+            "profile": ["http://localhost:8080/fhir/StructureDefinition/adjuvant-ingredient"]
         },
         "status" : "active",
         "text": {
@@ -258,7 +258,7 @@
             "value": "Magnesiumstearat"
         },
         "meta": {
-            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+            "profile": ["http://localhost:8080/fhir/StructureDefinition/adjuvant-ingredient"]
         },
         "status" : "active",
         "text": {
@@ -290,7 +290,7 @@
             "value": "Maisstaerke"
         },
         "meta": {
-            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+            "profile": ["http://localhost:8080/fhir/StructureDefinition/adjuvant-ingredient"]
         },
         "status" : "active",
         "text": {
@@ -322,7 +322,7 @@
             "value": "MikrokristallineCellulose"
         },
         "meta": {
-            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+            "profile": ["http://localhost:8080/fhir/StructureDefinition/adjuvant-ingredient"]
         },
         "status" : "active",
         "text": {
@@ -354,7 +354,7 @@
             "value": "CarmelloseNatrium"
         },
         "meta": {
-            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+            "profile": ["http://localhost:8080/fhir/StructureDefinition/adjuvant-ingredient"]
         },
         "status" : "active",
         "text": {
@@ -386,7 +386,7 @@
             "value": "Dimeticon"
         },
         "meta": {
-            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+            "profile": ["http://localhost:8080/fhir/StructureDefinition/adjuvant-ingredient"]
         },
         "status" : "active",
         "text": {
@@ -418,7 +418,7 @@
             "value": "Hypromellose"
         },
         "meta": {
-            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+            "profile": ["http://localhost:8080/fhir/StructureDefinition/adjuvant-ingredient"]
         },
         "status" : "active",
         "text": {
@@ -450,7 +450,7 @@
             "value": "Macrogol6000"
         },
         "meta": {
-            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+            "profile": ["http://localhost:8080/fhir/StructureDefinition/adjuvant-ingredient"]
         },
         "status" : "active",
         "text": {
@@ -482,7 +482,7 @@
             "value": "MethacrylsaeureMethylmethacrylatCopolymer"
         },
         "meta": {
-            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+            "profile": ["http://localhost:8080/fhir/StructureDefinition/adjuvant-ingredient"]
         },
         "status" : "active",
         "text": {
@@ -514,7 +514,7 @@
             "value": "Talkum"
         },
         "meta": {
-            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+            "profile": ["http://localhost:8080/fhir/StructureDefinition/adjuvant-ingredient"]
         },
         "status" : "active",
         "text": {
@@ -546,7 +546,7 @@
             "value": "TitandioxidE171"
         },
          "meta": {
-            "profile": ["http://localhost.org/StructureDefinition/adjuvant-ingredient"]
+            "profile": ["http://localhost:8080/fhir/StructureDefinition/adjuvant-ingredient"]
         },
         "status" : "active",
         "text": {

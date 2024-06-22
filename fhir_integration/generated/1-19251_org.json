@@ -1,10 +1,10 @@
 {
     "orgName": "Delpharm Reims",
-    "shortNameAsID": "OPH",
     "address_street_number": null,
     "address_city": "Reims",
     "address_zip": "51100",
     "address_country": "Frankreich",
     "webAdress": null,
-    "fax": null
+    "fax": null,
+    "manufacturer": "Der Hersteller des Medikaments Buscopan\u00ae plus Paracetamol 10 mg/500 mg Filmtabletten ist:\n\nDelpharm Reims  \nF-51100 Reims, Frankreich"
 }

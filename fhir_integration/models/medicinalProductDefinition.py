@@ -14,7 +14,7 @@ def map_to_mpd(extracted_mpd_info, org_manufacturer_id):
 
     data_in = {
         "resourceType": "MedicinalProductDefinition",
-        "meta": {"profile": ["http://localhost.org/StructureDefinition/mpdProfile"]}, #not mapped but fix value
+        "meta": {"profile": ["http://localhost:8080/fhir/StructureDefinition/mpdProfile"]}, #not mapped but fix value
         "text": {
             "status": "generated",
             "div": f"<div xmlns=\"http://www.w3.org/1999/xhtml\">MedicianelProductDefinition resource, for {extracted_mpd_info.get('fullName')} .</div>" 
@@ -68,14 +68,12 @@ def map_to_mpd(extracted_mpd_info, org_manufacturer_id):
                 }   
             }]
         }],
-
-        # hier noch sowas wie if ensureBasg == true, 
         "contact": [{
             "type": {
                 "text": "Zulasser"
             },
             "contact": {
-                "reference": "Organization/102" #102 = id basg in db
+                "reference": "Organization/13" #13 = id basg in db
             } 
         },
         {

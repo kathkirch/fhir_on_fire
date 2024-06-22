@@ -22,6 +22,7 @@ class LLMServiceBase:
                 {"role": "system", "content": role},
                 {"role": "user", "content": prompt}
             ],
+            temperature=0
         )
         result = response.choices[0].message.content.strip()
         if result == 'None':

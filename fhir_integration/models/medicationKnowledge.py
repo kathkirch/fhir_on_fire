@@ -1,6 +1,6 @@
 from fhir.resources.medicationknowledge import MedicationKnowledge
 
-def map_to_medKnow(extracted_medKnow_info, admission_nr, id_mpd): 
+def map_to_medKnow(extracted_medKnow_info, id_mpd, cud_list, admission_nr): 
 
     name = extracted_medKnow_info.get("name_medication")
     doseform = extracted_medKnow_info.get("doseform")
@@ -10,6 +10,9 @@ def map_to_medKnow(extracted_medKnow_info, admission_nr, id_mpd):
         "status": "active",
         "meta" : {
             "profile": ["http://localhost:8080/fhir/StructureDefinition/medicationKnowledge-leaflet"]
+        },
+        "identifier": {
+            "value": admission_nr
         },
         "indicationGuideline": [{
             "dosingGuideline": [
@@ -70,8 +73,7 @@ def map_to_medKnow(extracted_medKnow_info, admission_nr, id_mpd):
                         "text": "Maximale Einnahmedauer wenn nicht anders ärztlich verordnet"
                     },
                     "dosage": [{
-                        "patientInstruction": extracted_medKnow_info.get("hint_intake_duration"),
-                        
+                        "patientInstruction": extracted_medKnow_info.get("hint_intake_duration")
                     }]
                 }]
             },    
@@ -121,8 +123,7 @@ def map_to_medKnow(extracted_medKnow_info, admission_nr, id_mpd):
         "storageGuideline": [{
             "note": [{
                 "text": extracted_medKnow_info.get("storage_guideline"),
-            }],
-           
+            }]
         }],    
         "definitional": {
             "definition": [{
@@ -138,20 +139,10 @@ def map_to_medKnow(extracted_medKnow_info, admission_nr, id_mpd):
     }
 
     medication_knowledge = MedicationKnowledge(**data_in)
+    medication_knowledge.clinicalUseIssue = cud_list
 
     return medication_knowledge
 
-
-
-        
-    
-
-    # def add_cud_references(
-    #         list_side_effects,
-    #         list_warnings,
-    #         list_contraindication,
-    #         list_interaction
-    #     )
 
 
 
@@ -167,14 +158,5 @@ def add_cud_references(
         "display": f"{display}{definition}"
     }
     return base_dict
-
-list_results = []
-
-for validate in to_validate:
-    definition = "interaction"
-    id = get_id_to_definition()
-
-    clinical_use_issue = add_cud_references(id=id, definition=definition)
-    list_results.append(clinical_use_issue)
 
 

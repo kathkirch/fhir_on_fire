@@ -4,10 +4,6 @@ Id: medicinal-organization
 Title: "Medicinal Organization"
 Description: "A custom profile for Organization-Resources that is used to display information in the package insert for either the drug manufacturer or the marketing authorization holder"
 
-* identifier 1..1 MS
-* identifier.value ^short = "Identifier for the organisation, based on short name of organisation"
-* identifier.value 1..1 MS 
-
 * name ^short = "Name of organisation, the whole name of organization is required"
 * name 1..1 MS
 

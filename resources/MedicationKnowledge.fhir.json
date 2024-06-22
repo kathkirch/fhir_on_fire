@@ -1,6 +1,9 @@
 {
     "resourceType": "MedicationKnowledge",
     "status": "active",
+    "identifier": {
+        "value": "1-19251"
+    },
     "meta" : {
         "profile": ["http://localhost:8080/fhir/StructureDefinition/medicationKnowledge-leaflet"]
       },

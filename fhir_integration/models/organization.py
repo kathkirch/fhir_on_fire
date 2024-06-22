@@ -5,13 +5,8 @@ from fhir.resources.address import Address
 def map_to_organization(extracted_organization_info):
     organization = Organization(
         resourceType = "Organization",
-        meta = {"profile": ["http://localhost.org/StructureDefinition/medicinal-organization"]},
-        identifier = [{
-            "value": extracted_organization_info.get("shortNameAsID")
-        }],
-        name = extracted_organization_info.get("orgName"),
-
-        
+        meta = {"profile": ["http://localhost:8080/fhir/StructureDefinition/medicinal-organization"]},
+        name = extracted_organization_info.get("orgName"),   
     )
     street_number = extracted_organization_info.get("address_street_number")
     if street_number:

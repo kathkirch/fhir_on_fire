@@ -6,10 +6,10 @@ class LLMMultiple(LLMServiceBase):
         self.questions = questions
         self.role = (
             'Du bist ein e-Health Experte der sich Informationen aus einem '
-            'Medikamenten-Beipackzettel holt damit diese in einem späteren '
-            'Schritt als FHIR-Ressource abgelegt werden können. '
+            'Medikamenten-Beipackzettel holt um diese zu digitalisieren. '
             'Extrahiere nur die nötige Information und antworte direkt auf die Frage. '
-            'Antworten sollten keine Querverweise auf andere Abschnitte oder Aufzählungszeichen enthalten'
+            'Verweise in den Antworten nicht auf andere Kapitel oder Abschnitte des Beipackzettels. '
+            'Antworten sollten keine Aufzählungszeichen enthalten'
         )
 
     def extract_info(self, leaflet_text):

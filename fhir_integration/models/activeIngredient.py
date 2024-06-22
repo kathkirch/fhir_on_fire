@@ -14,7 +14,7 @@ def map_to_active_ingredient(name, strength, form):
         "resourceType": "Ingredient",
         "id": unique_id,
         "meta" :  {
-            "profile": ["http://localhost.org/StructureDefinition/active-ingredient"]
+            "profile": ["http://localhost:8080/fhir/StructureDefinition/active-ingredient"]
         },
         "status" : "active",
         "text" : {

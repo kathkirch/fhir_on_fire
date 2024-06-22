@@ -1,56 +1,67 @@
 questions_organization = {
-    "orgName": (
-        "Wie lautet der vollständige Name des Hersteller oder der Herstellerfirma. "
-        "Achte darauf den Hersteller zu finden und nicht den Vertreiber. Suche exakt den Hersteller"
-        "Die Antwort sollte nur den Herstellernamen enthalten"
-    ),
-    "shortNameAsID" : (
-        "Finde den Herstellernamen und generiere ein Kürzel mit welchen sich der Hersteller identifzieren lässt. "
-        "Die Anwort sollte nur das Kürzel enthalten"
-    ),
-    
-    "address_street_number": (
-        "Suche die Adresszeile des Herstellers. "
-        "Achte darauf den Hersteller zu finden und nicht den Vertreiber. "
-        "Aus der Adresszeile des Herstellers extrahiere die Strasse und Türnummer, falls vorhanden. "
-        "Ist keine Strasse und Türnummer vorhanden antworte ausschliesslich mit None! "
-    ),
-    "address_city": (
-        "Suche die Adresszeile des Herstellers. "
-        "Achte darauf den Hersteller zu finden und nicht den Vertreiber. "
-        "Aus der Adresszeile des Herstellers extrahiere die Stadt, falls vorhanden. "
-        "Ist keine Stadt angegeben antworte ausschliesslich mit None! "
-    ),
-    "address_zip": (
-        "Suche die Adresszeile des Herstellers. "
-        "Achte darauf den Hersteller zu finden und nicht den Vertreiber. "
-        "Aus der Adresszeile des Herstellers extrahiere die Postleitzahl. "
-        "Die Antwort sollte nur die Postleitzahl enthalten!"
-    ),
-    "address_country": (
-        "Suche die Adresszeile des Herstellers. "
-        "Achte darauf den Hersteller zu finden und nicht den Vertreiber. "
-        "Extrahiere das Land aus der Adresszeile. "
-        "Die Antwort sollte nur das Land enthalten!"
-    ),
-    "webAdress": (
-        "Suche nach der Webadresse des Herstellers. "
-        "Achte darauf den Hersteller zu finden und nicht den Vertreiber. "
-        "Ist keine Webadresse angegeben so antworte ausschliesslich mit None! "
-    ),
-    "fax":  (
-        "Suche nach der Faxnummer des Herstellers. "
-        "Achte darauf den Hersteller zu finden und nicht den Vertreiber. "
-        "Ist keine Faxnummer angegeben so antworte ausschliesslich mit None! "
-    )
+    "manufacturer": {
+        "question": (
+            "Suche nach dem Hersteller des Medikaments, und achte darauf den Hersteller und "
+            "nicht den Vertreiber zu finden. "
+            "Schreibe in deine Antwort den vollständigen Herstellernamen "
+            "sowie die gesamte gefundene Adresse und weitere Kontaktdaten wenn vorhanden."
+        ),
+        "following": {
+            "orgName": {
+                "question": (
+                    "Wie lautet der vollständige Name des Hersteller oder der Herstellerfirma. "
+                    "Die Antwort sollte nur den Herstellernamen enthalten"
+                )
+            },
+            "address_street_number": {
+                "question": (
+                    "Suche aus der Adresszeile des Herstellers extrahiere die Strasse und Türnummer, falls vorhanden. "
+                    "Ist keine Strasse und Türnummer vorhanden antworte ausschliesslich mit None! "
+                )
+            },
+            "address_city": {
+                "question": (
+                    "Suche aus der Adresszeile des Herstellers extrahiere die Stadt, falls vorhanden. "
+                    "Ist keine Stadt angegeben antworte ausschliesslich mit None! "
+                )
+            },
+            "address_zip": {
+                "question": (
+                    "Suche aus der Adresszeile des Herstellers extrahiere die Postleitzahl. "
+                    "Die Antwort sollte nur die Postleitzahl enthalten!"
+                )
+            },
+            "address_country": {
+                "question": (
+                    "Extrahiere das Land aus der Adresszeile. "
+                    "Die Antwort sollte nur das Land enthalten!"
+                )
+            },
+            "webAdress":{ 
+                "question": (
+                    "Suche nach der Webadresse des Herstellers. "
+                    "Ist keine Webadresse angegeben so antworte ausschliesslich mit None! "
+                )
+            },
+            "fax":{
+                "question": (
+                    "Suche nach der Faxnummer des Herstellers. "
+                    "Achte darauf den Hersteller zu finden und nicht den Vertreiber. "
+                    "Ist keine Faxnummer angegeben so antworte ausschliesslich mit None! "
+                )
+            }
+        }
+    }
 }
 
+#TODO optimize, modeOfAction, indication evtl zusammenfassen in following question
+# active und adjuvant auch aus einem abschnitt rauslesen
 questions_mpd = {
     "fullName": {
         "question": (
             "Suche nach dem vollständigen Produktnamen des Medikaments. "
             "Die Antwort sollte nur den vollständigen Produktnamen enthalten!"
-            ),
+        ),
         "following": {
             "nameDoseFormPart": {"question": (
                 "Suche im Produktnamen nach der Dosierform. "
@@ -76,7 +87,7 @@ questions_mpd = {
     )},
     "indication": {"question": (
         "Suche nach den Anwendungsbereich des Medikaments. "
-        "Sind verschiedene Anwendungsbereiche angegeben trenne diese mit einem Beistrich voneinander. "
+        "Sind verschiedene Anwendungsbereiche angegeben trenne diese mit einem Semikolon voneinander. "
         "Deine Antwort sollte nur die Anwendungsbereiche aufzählen"
     )},
     "creationDate": {"question": (
@@ -89,7 +100,6 @@ questions_mpd = {
         "Extrahiere den Text betreffend der zusätzlichen (Black Triangle) Überwachung. "
         "Ist keine Black-Triangle Information zu finden antworde ausschliesslich mit None!"
     )},
-
     "activeIngredient": {
         "question": (
             "Suche nach dem Abschnitt in dem die Wirkstoffe des Medikaments beschrieben sind. "
@@ -155,16 +165,13 @@ questions_medical_knowledge = {
                 "Schreibe in die Anwort wenn die Einnahme nicht limitiert ist und keine Hinweise existieren."
         )
     },
-           
-        
-    
     "general_dosage": {
         "question": (
             "Suche nach dem Abschnitt in dem die Einnahmeart und Dosierung des Medikaments erklärt wird. "
             "Deine Antwort sollte den gesamten Abschnitt zur Dosierung und korrekten Einnahme beinhalten. "
         ),
         "following": {
-            "patientInstruction": {
+            "patient_instruction": {
                 "question": (
                     "Welche Hinweise zur Einnahme sind enthalten. "
                     "Oft ist dies der erste Absatz am Abschnitt 'Wie Medikamentenname einzunehmen ist:'. "
@@ -229,122 +236,61 @@ questions_medical_knowledge = {
     }
 }
 
-questions_side_effects = {
-    "sideEffects": {
-        "question": (
-            "Suche nach den Abschnitt in dem die Nebenwirkungen beschrieben sind: "
-            "Deine Antwort soll den gesamten Abschnitt der Nebenwirkungen beinhalten!"
-        ),
-        "following": {
-            "frequency_categories": {
-                "question": (
-                    "Zähle die beschriebenen Häufigkeitskategorien und schreib sie in die Antwort. "
-                    "Deine Antwort soll nur aus der Zahl bestehen!"
-                )
-            } ,
-            "side_effects_list": {
-                "question":  (
-                    "Extrahiere alle möglichen Nebenwirkungen und zähle sie kategorisiert nach Häufigkeit auf. "
-                    "Formatiere deine Antwort folgend: Häufigkeit_A: Aufzählung1 | Aufzählung2 ; HäufigkeitB: Aufzählung3 | usw. "
-                    "Wenn zur Häufigkeit genaue Angaben wie oft etwas auftritt bekannt sind, führe dies bei der Häufigkeit mit an. "
-                ) 
-            }
-        }
-    }
-}
-
-questions_contraindications = {
-    "contraindications": (
-        "Unter welchen Umständen oder wann darf das Medikament nicht eingenommen werden? "
-        "Nenne alle Umstände/Kontraindikationen getrennt durch ein ';' in eine Liste auf. "
-        "Deine Antwort sollte nur diese Liste enthalten!"
+questions_undesirable_effects ={
+    "undesirable_effects": (
+        "Suche nach den Abschnitt in dem die Nebenwirkungen beschrieben sind und"
+        "extrahiere alle möglichen Nebenwirkungen und zähle sie kategorisiert nach Häufigkeit auf. "
+        "Formatiere deine Antwort folgend: Häufigkeit_A: Aufzählung1 | Aufzählung2 ; HäufigkeitB: Aufzählung3 | usw. "
+        "Wenn zur Häufigkeit genaue Angaben wie oft etwas auftritt bekannt sind, führe dies bei der Häufigkeit mit an. "
+        "Deine Antwort soll nur die Liste mit den Häufigkeiten und Nebenwirkungen beinhalten! "
     )
 }
 
-questions_interactions = {
-    "interactions": {
+questions_icw = {
+    "precautious": {
         "question": (
-            "Suche nach dem Abschnitt in dem Wechselwirkungen oder Einnahme des Medikaments mit anderen Medikamenten beschrieben sind: "
-            "Dazu gehört auch die Einnhame gemeinsam mit Alkohol oder anderen Lebensmitteln, sowie etwaige Auswirkungen auf Labortests etc. "
-            "Deine Antwort soll den gesamten Abschnitt über diese Wechselwirkungen beinhalten!"
-        ),
+                "Suche das Kapitel Was vor der Einnhame des Medikaments zu beachten ist. " 
+                "Dieses Kapitel beinhaltet Informationen wann das Medikament nicht eingenommen werden darf, "
+                "Warnhinweise und Vorsichtsmaßnahmen, Informationen zu Wechselwirkungen mit anderen Medikamenten, und weitere Hinweise und Warnungen "
+                "Schreibe das Kapitel inklusive der Abschnittsüberschriften in deine Antwort. "
+            ),
         "following": {
-            "alcohol": {
-                "question": (
-                    "Such nach dem Abschnitt in dem die Einnhame mit Alkohol beschrieben ist. "
-                    "Deine Antwort soll nur die beschriebene Wirkung beinhalten. "
-                    "Findest du keine Hinweise so antworte mit None."
-                )
-            } ,
-            "medications": {
+            "interaction_medications": {
                 "question":  (
-                    "Suche nach dem Abschnitt in dem die Einnahme mit anderen Medikamenten beschrieben sind.  "
-                    "Nenne alle beschriebenen Wechselwirkungen oder Hinweise zu Wechselwirkungen, trenne die einzelnen Aufzählungen mit einem ; voneinander. "
-                    "Deine Antwort soll nur die Liste der Aufzählungen beinhalten!"
+                    "Suche den Abschnitt in dem die Einnahme mit anderen Medikamenten (Wechselwirkungen) beschrieben sind.  "
+                    "Nenne alle beschriebenen Wechselwirkungen oder Hinweise zu Wechselwirkungen mit anderen Medikamenten die im Abschnitt vorkommen und "
+                    "trenne die einzelnen Aufzählungen mit einem | voneinander. "
+                    "Es ist wichtig dass in den einzelnen Einträgen auch immer die mögliche Wechselwirkung genannt wird"
+                    "Deine Antwort soll die Liste der extrahierten Wechselwirkungen beinhalten! "
                 ) 
             },
-            "other": {
+            "contraindications": {
                 "question": (
-                    "Suche danach ob Beeinflussungen beschrieben sind, die nicht die Wirkung mit anderen Medikamente oder Alkohol betreffen.  "
-                    "Nenne die gefundenen Wirkungen und ordne sie einem Thema zu. "
-                    "Deine Antwort sollte dann wie folgt formatiert sein: Thema, Inhalt; Thema2, Inhalt2; usw. "
-                    "Wenn keine anderen Wechselwirkungen die nicht Alkohol oder Medikamente betreffen beschrieben sind, antworte mit None"
+                    "Suche den Abschnitt wann das Medikament nicht eingenommen werden darf! "
+                    "Nenne in deiner Antwort nur die Umstände wann das Medikament nicht eingenommen werden darf "
+                    "ohne eine Einleitung, in der Antwort darf nicht sowas stehen wie ''Das Medikament XZY darf nicht eingenommen werden'"
+                    "trenne die einzelnen Situationen mit einer | . "
+                )  
+            },
+            "warning_other": {
+                "question": (
+                    "Suche Warnungen/Hinweisen die nach dem Abschnitt zur Einnahme des Medikaments mit anderen Arzneimitteln (den Wechselwirkungen) beschrieben werden "
+                    "Beispiele sind Informationen zur Verkehrstüchtigkeit, Einnahme mit Alkohol, Beeinflussung von Labortests ..."
+                    "Diese Warnungen sind meist mit einer eigenen Überschrift versehen "
+                    "Deine Antwort sollte dann wie folgt formatiert sein: Überschrift, Inhalt| Überschrift2, Inhalt2| usw. "
+                    "Stelle sicher dass du Hinweise zu Wechselwirkungen mit anderen Medikamenten von deiner Antwort ausschliesst. "
+                    "Stelle sicher keine Warnungen zu nennen die im Abschnitt 'Warnhinweise und Vorsichtsmaßnahmen' vorkommen"
+                    "Wenn keine anderen Warnungen beschrieben sind, antworte mit None"
                 )
-            }
+            },
+            "hints" : {
+                "question": (
+                    "Suche den Abschnitt 'Warnhinweise und Vorsichtsmaßnahmen'"
+                    "Dieser Abschnitt beinhaltet Anweisungen welche Informationen mit einem Arzt abgeklärt werden muss und was während der Einnhame zu beachten ist"
+                    "Hinweise enthalten entweder eine Anweisungen mit mehreren Aufzählungen oder beschreiben eine einzelne Anweisung/Hinweis. "
+                    "Schreibe diese Anweisungen oder Anweisungen mit Aufzählungen in eine Liste und trenne unabhängige Anweisungen mit einem | voneinander."
+                )
+            },
         }
     }
 }
-
-questions_warnings = {
-    "precautios_warning": {
-        "question": (
-            "Suche nach dem Abschnitt 'Warnhinweise und Vorsichtsmaßnahmen' " 
-            "dieser ist im oft im Kapitel was vor der Einnahme des Medikaments zu beachten' ist. "
-            "Schreibe den Abschnitt in deine Antwort" 
-        ),
-        "following": {
-            "warning_hints": {
-                "question": (
-                    "Extrahiere alle Anweisungen und Warnhinweise aus diesem Abschnitt. "
-                    "Einzelne Einträge stehen meist in einem eigenen Absatz, und sind thematisch voneinander getrennt. "
-                    "Antworte mit allen relevanten Anweisungen und Warnhinweisen und strukturiere diese so, "
-                    "dass jeder Eintrag thematisch voneinander abgegrenzt wird. Trenne Einträge mit einem | voneinander."
-              
-                )
-            }
-        }
-    },
-    # "special_warnings": {
-        # "question": (
-        #     "Suche nach dem Kapitel was vor der Einnahme des Medikaments zu beachten ist. "
-        #     "Dieses Kapitel beinhaltet, Kontraindikationen, Warnhinweise und Vorichtsmaßnahmen, Wechselwirkungen und Spezielle Warnungen. "
-        #     "Entferne die Inhalte vor den speziellen Warnungen, heißt alles von Anfang bis inklusive Wechselwirkungen"
-        #     "Extrahiere den Rest in deine Antwort"
-        # ),
-        # "following": {
-            "roadworthiness": {
-                "question": (
-                    "Such nach Hinweisen die die Verkehrstüchtigkeit oder das Bedienen von Maschinen betreffen. "
-                    "Deine Antwort soll nur die Hinweise dazu enthalten. Findest du nichts antworte mit None."
-                )
-            },
-            "pregnancy": {
-                "question": (
-                    "Suche nach Hinweisen die Schwangerschaft und Stillen betreffen"
-                    "Deine Antwort soll nur die Hinweise dazu enthalten. Findest du nichts antworte mit None. "
-                )
-            },
-            # "other": {
-            #     "question": (
-            #         "Such nach anderen besonderen Hinweisen die nicht Schwangerschaft, Stillen oder Verkehrstüchtigkeit bzw. das Bedienen schwerer Maschinen betreffen.  "
-            #         "und Hinweise die nicht unter Warnungen und Vorsichtsmaßnahmen zu finden sind. "
-            #         "Findest du verschiedene Trenne einzelne Einträge mit einem ; voneinander."
-            #         "Deine Antwort sollte nur diese besonderen Warnungen enthalten. "
-            #     )
-            # }   
-        # }
-    # }
-}
-
-
-

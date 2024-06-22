@@ -75,8 +75,8 @@ Description: "Custom MedicinalProductDefinition profile for displaying informati
 * contained[ActiveIngredient] only ActiveIngredient
 * contained[AdjuvantIngredient] only AdjuvantIngredient
 
-* contained[ActiveIngredient].meta.profile = "http://localhost.org/StructureDefinition/active-ingredient"
-* contained[AdjuvantIngredient].meta.profile = "http://localhost.org/StructureDefinition/adjuvant-ingredient"
+* contained[ActiveIngredient].meta.profile = "http://localhost:8080/fhir/StructureDefinition/active-ingredient"
+* contained[AdjuvantIngredient].meta.profile = "http://localhost:8080/fhir/StructureDefinition/adjuvant-ingredient"
 
 * statusDate 1..1 MS
 * statusDate ^short = "Date when leaflet was created"
