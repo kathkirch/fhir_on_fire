@@ -9,23 +9,10 @@ class StorageService:
     def __init__(self, base_url):
         self.client = FHIRClient(base_url)
 
-    def store_organization(self, organization):
-        created_resource = self.client.save_resource('Organization', organization.dict())
-        return created_resource
-    
-    def store_mpd(self, mpd):
-        data = convert_to_serializable(mpd.dict())
-        created_resource = self.client.save_resource('MedicinalProductDefinition', data)
-        return created_resource  
-
-    def store_cud(self, cud):
-        created_resource = self.client.save_resource('ClinicalUseDefinition', cud.dict())
-        return created_resource 
-
-    def store_mk(self, mk):
-        data = convert_to_serializable(mk.dict())
-        created_resource = self.client.save_resource('MedicationKnowledge', data) 
-        return created_resource   
+    def store(self, resource):
+        type = resource.resource_type
+        data = convert_to_serializable(resource.dict())
+        return self.client.save_resource(type, data)
     
 
 def convert_to_serializable(data):

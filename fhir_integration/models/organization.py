@@ -3,12 +3,24 @@ from fhir.resources.contactpoint import ContactPoint
 from fhir.resources.address import Address
 
 def map_to_organization(extracted_organization_info):
-    organization = Organization(
-        resourceType = "Organization",
-        meta = {"profile": ["http://localhost:8080/fhir/StructureDefinition/medicinal-organization"]},
-        name = extracted_organization_info.get("orgName"),   
-    )
+    org_name = extracted_organization_info.get("orgName")
     street_number = extracted_organization_info.get("address_street_number")
+    fax = extracted_organization_info.get("fax")
+    url = extracted_organization_info.get("webAdress")
+    
+    data_in = {
+        "resourceType": "Organization",
+        "meta": {
+            "profile": ["http://localhost:8080/fhir/StructureDefinition/medicinal-organization"]
+        },
+        "name": org_name,
+        "text": {
+            "status": "generated",
+            "div": f"<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>{org_name}</h1></div>"
+        }
+    }
+    organization = Organization(**data_in)
+   
     if street_number:
        organization.contact = [{
             "address": {
@@ -40,9 +52,6 @@ def map_to_organization(extracted_organization_info):
             }
         }] 
 
-    fax = extracted_organization_info.get("fax")
-    url = extracted_organization_info.get("webAdress")
-    
     if fax: 
         if not organization.contact[0].telecom:
             organization.contact[0].telecom = []

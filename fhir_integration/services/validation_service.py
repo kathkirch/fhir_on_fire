@@ -8,19 +8,10 @@ class ValidationService:
     def __init__(self, base_url):
         self.client = FHIRClient(base_url)
 
-    def validate_organization(self, organization):
-        return self.client.validate_resource('Organization', organization.dict())
-
-    def validate_mpd(self, mpd):
-        data = convert_to_serializable(mpd.dict())
-        return self.client.validate_resource('MedicinalProductDefinition', data)
-    
-    def validate_medicationKnowledge(self, medicationKnowledge):
-        data = convert_to_serializable(medicationKnowledge.dict())
-        return self.client.validate_resource('MedicationKnowledge', data)
-
-    def validate_clinicalUseDefinition(self, clinicalUseDefinition):
-        return self.client.validate_resource('ClinicalUseDefinition', clinicalUseDefinition.dict())
+    def validate(self, resource):
+        type = resource.resource_type 
+        data = convert_to_serializable(resource.dict())
+        return self.client.validate_resource(type, data)
 
 
 def convert_to_serializable(data):

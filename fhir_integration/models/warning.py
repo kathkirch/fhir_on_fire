@@ -21,13 +21,13 @@ def map_to_warning(warning):
     return warning
 
 
-def split_warnings(warning_string):
-    entries = warning_string.split('|')
-    warning_list = []
-    for entry in entries:
-        entry = entry.strip()
-        warning_list.append(entry)
-    return warning_list
+# def split_warnings(warning_string):
+#     entries = warning_string.split('|')
+#     warning_list = []
+#     for entry in entries:
+#         entry = entry.strip()
+#         warning_list.append(entry)
+#     return warning_list
 
 
 
